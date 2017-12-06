@@ -1,0 +1,639 @@
+<#escape x as x?html>
+
+<SCRIPT type="text/javascript">
+<!--
+
+jQuery(document).ready(function(){
+	//回选 下拉框
+	//jQuery("#search_state option[value='是']").prop("selected",true);
+	
+	/*
+	$('.date-picker').datepicker({
+		    autoclose: true,
+		    format: 'yyyy-mm-dd',
+		    language: 'zh-CN'
+		    //,todayBtn: 'linked',
+		    //startDate:new Date(2014,10,27),
+			//endDate:'+60d',
+		    //startDate: '+1d',
+		}).next().on(ace.click_event, function(){
+			$(this).prev().focus();
+		});
+	*/
+	
+	
+	
+	});
+	
+	
+//-->
+</SCRIPT>
+
+
+
+<div class="row">
+	<div class="col-xs-12">
+		<form class="form-horizontal" id="validation-form" method="POST" novalidate="novalidate" action="${ctx}/feloan/update" > 
+			<input type="hidden" id="member_id" name="member_id" value="${(returnDatas.data.member_id)!''}"/>	
+<!--input  hidden  End-->
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="apply_sn" >申请书编号</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="apply_sn" class="col-xs-12 col-sm-6" id="apply_sn" value="${(returnDatas.data.apply_sn)!''}"  type="text" />
+					</div><div class="help-block" for="apply_sn"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="clientele_type" >客户类型 代码表</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="clientele_type" class="col-xs-12 col-sm-6" id="clientele_type" value="${(returnDatas.data.clientele_type)!''}"  type="text" />
+					</div><div class="help-block" for="clientele_type"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="channel_type" >渠道类型 代码表</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="channel_type" class="col-xs-12 col-sm-6" id="channel_type" value="${(returnDatas.data.channel_type)!''}"  type="text" />
+					</div><div class="help-block" for="channel_type"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="activity_type" >活动类型 代码表</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="activity_type" class="col-xs-12 col-sm-6" id="activity_type" value="${(returnDatas.data.activity_type)!''}"  type="text" />
+					</div><div class="help-block" for="activity_type"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="repayment_basis" >还款方式 代码表</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="repayment_basis" class="col-xs-12 col-sm-6" id="repayment_basis" value="${(returnDatas.data.repayment_basis)!''}"  type="text" />
+					</div><div class="help-block" for="repayment_basis"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="loan_product" >贷款产品 LM_LOAN_CALCULATION表中PRODUCT_ID</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="loan_product" class="col-xs-12 col-sm-6" id="loan_product" value="${(returnDatas.data.loan_product)!''}"  type="text" />
+					</div><div class="help-block" for="loan_product"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="order_id" >购买商品订单</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="order_id" class="col-xs-12 col-sm-6" id="order_id" value="${(returnDatas.data.order_id)!''}"  type="text" />
+					</div><div class="help-block" for="order_id"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="goods_total" >商品总价</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="goods_total" class="col-xs-12 col-sm-6" id="goods_total" value="${(returnDatas.data.goods_total)!''}"  type="text" />
+					</div><div class="help-block" for="goods_total"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="down_pay" >首付金额</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="down_pay" class="col-xs-12 col-sm-6" id="down_pay" value="${(returnDatas.data.down_pay)!''}"  type="text" />
+					</div><div class="help-block" for="down_pay"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="loan_money" >贷款金额</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="loan_money" class="col-xs-12 col-sm-6" id="loan_money" value="${(returnDatas.data.loan_money)!''}"  type="text" />
+					</div><div class="help-block" for="loan_money"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="periods" >分期期数</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="periods" class="col-xs-12 col-sm-6" id="periods" value="${(returnDatas.data.periods)!''}"  type="text" />
+					</div><div class="help-block" for="periods"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="down_date" >首次还款日</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="down_date" class="col-xs-12 col-sm-6" id="down_date" value="${(returnDatas.data.down_date)!''}"  type="text" />
+					</div><div class="help-block" for="down_date"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="per_month_date" >每月还款日</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="per_month_date" class="col-xs-12 col-sm-6" id="per_month_date" value="${(returnDatas.data.per_month_date)!''}"  type="text" />
+					</div><div class="help-block" for="per_month_date"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="last_date" >最后还款日</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="last_date" class="col-xs-12 col-sm-6" id="last_date" value="${(returnDatas.data.last_date)!''}"  type="text" />
+					</div><div class="help-block" for="last_date"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="down_money" >首次还款额</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="down_money" class="col-xs-12 col-sm-6" id="down_money" value="${(returnDatas.data.down_money)!''}"  type="text" />
+					</div><div class="help-block" for="down_money"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="per_month_money" >每月还款额</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="per_month_money" class="col-xs-12 col-sm-6" id="per_month_money" value="${(returnDatas.data.per_month_money)!''}"  type="text" />
+					</div><div class="help-block" for="per_month_money"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="last_money" >最后还款额</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="last_money" class="col-xs-12 col-sm-6" id="last_money" value="${(returnDatas.data.last_money)!''}"  type="text" />
+					</div><div class="help-block" for="last_money"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="total_money" >总还款额</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="total_money" class="col-xs-12 col-sm-6" id="total_money" value="${(returnDatas.data.total_money)!''}"  type="text" />
+					</div><div class="help-block" for="total_money"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="month_assure_money" >每月担保费</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="month_assure_money" class="col-xs-12 col-sm-6" id="month_assure_money" value="${(returnDatas.data.month_assure_money)!''}"  type="text" />
+					</div><div class="help-block" for="month_assure_money"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="total_assure_money" >总担保费</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="total_assure_money" class="col-xs-12 col-sm-6" id="total_assure_money" value="${(returnDatas.data.total_assure_money)!''}"  type="text" />
+					</div><div class="help-block" for="total_assure_money"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="formalities_money" >手续费</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="formalities_money" class="col-xs-12 col-sm-6" id="formalities_money" value="${(returnDatas.data.formalities_money)!''}"  type="text" />
+					</div><div class="help-block" for="formalities_money"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="loan_sn" >贷款产品代码 代码表</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="loan_sn" class="col-xs-12 col-sm-6" id="loan_sn" value="${(returnDatas.data.loan_sn)!''}"  type="text" />
+					</div><div class="help-block" for="loan_sn"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="loan_agency" >贷款发放机构代码 代码表</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="loan_agency" class="col-xs-12 col-sm-6" id="loan_agency" value="${(returnDatas.data.loan_agency)!''}"  type="text" />
+					</div><div class="help-block" for="loan_agency"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="loan_type_sn" >贷款类型代码 代码表</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="loan_type_sn" class="col-xs-12 col-sm-6" id="loan_type_sn" value="${(returnDatas.data.loan_type_sn)!''}"  type="text" />
+					</div><div class="help-block" for="loan_type_sn"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="loan_type" >贷款类型</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="loan_type" class="col-xs-12 col-sm-6" id="loan_type" value="${(returnDatas.data.loan_type)!''}"  type="text" />
+					</div><div class="help-block" for="loan_type"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="repayment_name" >还款账户名</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="repayment_name" class="col-xs-12 col-sm-6" id="repayment_name" value="${(returnDatas.data.repayment_name)!''}"  type="text" />
+					</div><div class="help-block" for="repayment_name"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="repayment_account" >还款帐号</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="repayment_account" class="col-xs-12 col-sm-6" id="repayment_account" value="${(returnDatas.data.repayment_account)!''}"  type="text" />
+					</div><div class="help-block" for="repayment_account"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="repayment_bank" >还款账户开户行代码 代码表</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="repayment_bank" class="col-xs-12 col-sm-6" id="repayment_bank" value="${(returnDatas.data.repayment_bank)!''}"  type="text" />
+					</div><div class="help-block" for="repayment_bank"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="sell_sn" >销售点代码 sell_sn=business_id</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="sell_sn" class="col-xs-12 col-sm-6" id="sell_sn" value="${(returnDatas.data.sell_sn)!''}"  type="text" />
+					</div><div class="help-block" for="sell_sn"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="deputy_sn" >销售代表代码 deputy_sn=member_id</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="deputy_sn" class="col-xs-12 col-sm-6" id="deputy_sn" value="${(returnDatas.data.deputy_sn)!''}"  type="text" />
+					</div><div class="help-block" for="deputy_sn"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="deputy_name" >销售代表姓名</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="deputy_name" class="col-xs-12 col-sm-6" id="deputy_name" value="${(returnDatas.data.deputy_name)!''}"  type="text" />
+					</div><div class="help-block" for="deputy_name"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="deputy_mobile" >销售代表手机号</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="deputy_mobile" class="col-xs-12 col-sm-6" id="deputy_mobile" value="${(returnDatas.data.deputy_mobile)!''}"  type="text" />
+					</div><div class="help-block" for="deputy_mobile"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="promoter_sn" >促销员代码 promoter_sn=member_id</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="promoter_sn" class="col-xs-12 col-sm-6" id="promoter_sn" value="${(returnDatas.data.promoter_sn)!''}"  type="text" />
+					</div><div class="help-block" for="promoter_sn"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="promoter_name" >促销员姓名</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="promoter_name" class="col-xs-12 col-sm-6" id="promoter_name" value="${(returnDatas.data.promoter_name)!''}"  type="text" />
+					</div><div class="help-block" for="promoter_name"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="promoter_mobile" >促销员手机号</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="promoter_mobile" class="col-xs-12 col-sm-6" id="promoter_mobile" value="${(returnDatas.data.promoter_mobile)!''}"  type="text" />
+					</div><div class="help-block" for="promoter_mobile"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="trial_sn" >初审代码 业务代表填写</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="trial_sn" class="col-xs-12 col-sm-6" id="trial_sn" value="${(returnDatas.data.trial_sn)!''}"  type="text" />
+					</div><div class="help-block" for="trial_sn"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="trial_opinion" >初审意见 业务代表填写</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="trial_opinion" class="col-xs-12 col-sm-6" id="trial_opinion" value="${(returnDatas.data.trial_opinion)!''}"  type="text" />
+					</div><div class="help-block" for="trial_opinion"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="trial_remark" >初审备注 业务代表填写</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="trial_remark" class="col-xs-12 col-sm-6" id="trial_remark" value="${(returnDatas.data.trial_remark)!''}"  type="text" />
+					</div><div class="help-block" for="trial_remark"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="audit_sn" >审核代码 审核员填写</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="audit_sn" class="col-xs-12 col-sm-6" id="audit_sn" value="${(returnDatas.data.audit_sn)!''}"  type="text" />
+					</div><div class="help-block" for="audit_sn"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="audit_say" >审核意见 审核员填写</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="audit_say" class="col-xs-12 col-sm-6" id="audit_say" value="${(returnDatas.data.audit_say)!''}"  type="text" />
+					</div><div class="help-block" for="audit_say"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="audit_remark" >审核备注 审核员填写</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="audit_remark" class="col-xs-12 col-sm-6" id="audit_remark" value="${(returnDatas.data.audit_remark)!''}"  type="text" />
+					</div><div class="help-block" for="audit_remark"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="archive_type" >归档类型</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="archive_type" class="col-xs-12 col-sm-6" id="archive_type" value="${(returnDatas.data.archive_type)!''}"  type="text" />
+					</div><div class="help-block" for="archive_type"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="auth_sn" >授权号</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="auth_sn" class="col-xs-12 col-sm-6" id="auth_sn" value="${(returnDatas.data.auth_sn)!''}"  type="text" />
+					</div><div class="help-block" for="auth_sn"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="audit_state" >audit_state</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="audit_state" class="col-xs-12 col-sm-6" id="audit_state" value="${(returnDatas.data.audit_state)!''}"  type="text" />
+					</div><div class="help-block" for="audit_state"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="back_remark" >退单备注</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="back_remark" class="col-xs-12 col-sm-6" id="back_remark" value="${(returnDatas.data.back_remark)!''}"  type="text" />
+					</div><div class="help-block" for="back_remark"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="back_reason" >退单原因</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="back_reason" class="col-xs-12 col-sm-6" id="back_reason" value="${(returnDatas.data.back_reason)!''}"  type="text" />
+					</div><div class="help-block" for="back_reason"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="refuse_reason" >拒绝原因</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="refuse_reason" class="col-xs-12 col-sm-6" id="refuse_reason" value="${(returnDatas.data.refuse_reason)!''}"  type="text" />
+					</div><div class="help-block" for="refuse_reason"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="except_reason" >异常原因</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="except_reason" class="col-xs-12 col-sm-6" id="except_reason" value="${(returnDatas.data.except_reason)!''}"  type="text" />
+					</div><div class="help-block" for="except_reason"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+					<!--日期型-->
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="apply_time" >申请时间</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+					 <div class="input-group col-xs-12 col-sm-6">
+						<input name="apply_time"  class="form-control date-picker"  id="apply_time" readonly="readonly" value="${(returnDatas.data.apply_time)!''}"  type="text" />
+					        <span class="input-group-addon">
+								<i class="fa fa-calendar bigger-110"></i>
+							</span>
+					   </div>
+					
+					</div><div class="help-block" for="apply_time"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+					<!--日期型-->
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="audit_time" >审核时间</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+					 <div class="input-group col-xs-12 col-sm-6">
+						<input name="audit_time"  class="form-control date-picker"  id="audit_time" readonly="readonly" value="${(returnDatas.data.audit_time)!''}"  type="text" />
+					        <span class="input-group-addon">
+								<i class="fa fa-calendar bigger-110"></i>
+							</span>
+					   </div>
+					
+					</div><div class="help-block" for="audit_time"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="business_sn" >商户代码</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="business_sn" class="col-xs-12 col-sm-6" id="business_sn" value="${(returnDatas.data.business_sn)!''}"  type="text" />
+					</div><div class="help-block" for="business_sn"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="shop_sn" >门店代码</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="shop_sn" class="col-xs-12 col-sm-6" id="shop_sn" value="${(returnDatas.data.shop_sn)!''}"  type="text" />
+					</div><div class="help-block" for="shop_sn"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="funds_sn" >funds_sn</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="funds_sn" class="col-xs-12 col-sm-6" id="funds_sn" value="${(returnDatas.data.funds_sn)!''}"  type="text" />
+					</div><div class="help-block" for="funds_sn"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="loans_state" >放款状态</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="loans_state" class="col-xs-12 col-sm-6" id="loans_state" value="${(returnDatas.data.loans_state)!''}"  type="text" />
+					</div><div class="help-block" for="loans_state"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="borrow_reason" >borrow_reason</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="borrow_reason" class="col-xs-12 col-sm-6" id="borrow_reason" value="${(returnDatas.data.borrow_reason)!''}"  type="text" />
+					</div><div class="help-block" for="borrow_reason"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="loanAmt" >loanAmt</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="loanAmt" class="col-xs-12 col-sm-6" id="loanAmt" value="${(returnDatas.data.loanAmt)!''}"  type="text" />
+					</div><div class="help-block" for="loanAmt"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="loanReqAmt" >loanReqAmt</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="loanReqAmt" class="col-xs-12 col-sm-6" id="loanReqAmt" value="${(returnDatas.data.loanReqAmt)!''}"  type="text" />
+					</div><div class="help-block" for="loanReqAmt"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="businessName" >商户名称</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="businessName" class="col-xs-12 col-sm-6" id="businessName" value="${(returnDatas.data.businessName)!''}"  type="text" />
+					</div><div class="help-block" for="businessName"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="productName" >商品名称</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="productName" class="col-xs-12 col-sm-6" id="productName" value="${(returnDatas.data.productName)!''}"  type="text" />
+					</div><div class="help-block" for="productName"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="gurantorRate" >担保率</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="gurantorRate" class="col-xs-12 col-sm-6" id="gurantorRate" value="${(returnDatas.data.gurantorRate)!''}"  type="text" />
+					</div><div class="help-block" for="gurantorRate"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="gurantorFee" >担保费</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="gurantorFee" class="col-xs-12 col-sm-6" id="gurantorFee" value="${(returnDatas.data.gurantorFee)!''}"  type="text" />
+					</div><div class="help-block" for="gurantorFee"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="yearRate" >年化率</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="yearRate" class="col-xs-12 col-sm-6" id="yearRate" value="${(returnDatas.data.yearRate)!''}"  type="text" />
+					</div><div class="help-block" for="yearRate"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="costRate" >资金成本率</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="costRate" class="col-xs-12 col-sm-6" id="costRate" value="${(returnDatas.data.costRate)!''}"  type="text" />
+					</div><div class="help-block" for="costRate"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="confirmrefuse_reason" >复审退回原因</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="confirmrefuse_reason" class="col-xs-12 col-sm-6" id="confirmrefuse_reason" value="${(returnDatas.data.confirmrefuse_reason)!''}"  type="text" />
+					</div><div class="help-block" for="confirmrefuse_reason"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+		</form>
+		<div class="wizard-actions">
+			<button class="btn btn-success btn-info" data-last="Finish" onclick="commonUpdateForm('validation-form','${ctx}/feloan/list');">
+				保存
+			</button>
+		</div>
+	</div>
+</div>
+
+
+</#escape>

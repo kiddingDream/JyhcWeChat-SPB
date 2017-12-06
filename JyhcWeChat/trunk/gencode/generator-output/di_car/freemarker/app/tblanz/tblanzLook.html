@@ -1,0 +1,74 @@
+<#escape x as x?html>
+<div class="row">
+	<div class="col-xs-12">
+		<!--input  hidden  Start-->
+	<input type="hidden" id="id" name="id" value="${(returnDatas.data.id}"/>	
+<!--input  hidden  End-->
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="phone" >phone</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.phone)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="msg" >msg</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.msg)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+					<!--日期型-->
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="insertTime" >insertTime</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+									${(returnDatas.data.((tbLanz.insertTime)?string('yyyy-MM-dd'))!'' )!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+					<!--日期型-->
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="sendTime" >sendTime</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+									${(returnDatas.data.((tbLanz.sendTime)?string('yyyy-MM-dd'))!'' )!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="channelCode" >channelCode</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.channelCode)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="sendEnd" >sendEnd</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.sendEnd)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="smsTemplate" >smsTemplate</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.smsTemplate)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+	</div><!-- /.col -->
+</div>
+</#escape>

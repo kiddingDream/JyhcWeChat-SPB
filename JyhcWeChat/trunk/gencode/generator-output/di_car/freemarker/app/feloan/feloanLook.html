@@ -1,0 +1,587 @@
+<#escape x as x?html>
+<div class="row">
+	<div class="col-xs-12">
+		<!--input  hidden  Start-->
+	<input type="hidden" id="member_id" name="member_id" value="${(returnDatas.data.member_id}"/>	
+<!--input  hidden  End-->
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="apply_sn" >申请书编号</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.apply_sn)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="clientele_type" >客户类型 代码表</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.clientele_type)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="channel_type" >渠道类型 代码表</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.channel_type)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="activity_type" >活动类型 代码表</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.activity_type)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="repayment_basis" >还款方式 代码表</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.repayment_basis)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="loan_product" >贷款产品 LM_LOAN_CALCULATION表中PRODUCT_ID</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.loan_product)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="order_id" >购买商品订单</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.order_id)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="goods_total" >商品总价</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.goods_total)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="down_pay" >首付金额</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.down_pay)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="loan_money" >贷款金额</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.loan_money)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="periods" >分期期数</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.periods)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="down_date" >首次还款日</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.down_date)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="per_month_date" >每月还款日</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.per_month_date)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="last_date" >最后还款日</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.last_date)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="down_money" >首次还款额</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.down_money)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="per_month_money" >每月还款额</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.per_month_money)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="last_money" >最后还款额</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.last_money)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="total_money" >总还款额</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.total_money)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="month_assure_money" >每月担保费</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.month_assure_money)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="total_assure_money" >总担保费</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.total_assure_money)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="formalities_money" >手续费</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.formalities_money)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="loan_sn" >贷款产品代码 代码表</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.loan_sn)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="loan_agency" >贷款发放机构代码 代码表</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.loan_agency)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="loan_type_sn" >贷款类型代码 代码表</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.loan_type_sn)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="loan_type" >贷款类型</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.loan_type)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="repayment_name" >还款账户名</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.repayment_name)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="repayment_account" >还款帐号</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.repayment_account)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="repayment_bank" >还款账户开户行代码 代码表</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.repayment_bank)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="sell_sn" >销售点代码 sell_sn=business_id</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.sell_sn)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="deputy_sn" >销售代表代码 deputy_sn=member_id</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.deputy_sn)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="deputy_name" >销售代表姓名</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.deputy_name)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="deputy_mobile" >销售代表手机号</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.deputy_mobile)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="promoter_sn" >促销员代码 promoter_sn=member_id</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.promoter_sn)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="promoter_name" >促销员姓名</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.promoter_name)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="promoter_mobile" >促销员手机号</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.promoter_mobile)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="trial_sn" >初审代码 业务代表填写</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.trial_sn)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="trial_opinion" >初审意见 业务代表填写</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.trial_opinion)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="trial_remark" >初审备注 业务代表填写</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.trial_remark)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="audit_sn" >审核代码 审核员填写</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.audit_sn)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="audit_say" >审核意见 审核员填写</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.audit_say)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="audit_remark" >审核备注 审核员填写</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.audit_remark)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="archive_type" >归档类型</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.archive_type)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="auth_sn" >授权号</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.auth_sn)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="audit_state" >audit_state</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.audit_state)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="back_remark" >退单备注</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.back_remark)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="back_reason" >退单原因</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.back_reason)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="refuse_reason" >拒绝原因</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.refuse_reason)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="except_reason" >异常原因</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.except_reason)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+					<!--日期型-->
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="apply_time" >申请时间</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+									${(returnDatas.data.((feLoan.apply_time)?string('yyyy-MM-dd'))!'' )!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+					<!--日期型-->
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="audit_time" >审核时间</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+									${(returnDatas.data.((feLoan.audit_time)?string('yyyy-MM-dd'))!'' )!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="business_sn" >商户代码</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.business_sn)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="shop_sn" >门店代码</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.shop_sn)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="funds_sn" >funds_sn</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.funds_sn)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="loans_state" >放款状态</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.loans_state)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="borrow_reason" >borrow_reason</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.borrow_reason)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="loanAmt" >loanAmt</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.loanAmt)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="loanReqAmt" >loanReqAmt</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.loanReqAmt)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="businessName" >商户名称</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.businessName)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="productName" >商品名称</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.productName)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="gurantorRate" >担保率</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.gurantorRate)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="gurantorFee" >担保费</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.gurantorFee)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="yearRate" >年化率</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.yearRate)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="costRate" >资金成本率</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.costRate)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="confirmrefuse_reason" >复审退回原因</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.confirmrefuse_reason)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+	</div><!-- /.col -->
+</div>
+</#escape>

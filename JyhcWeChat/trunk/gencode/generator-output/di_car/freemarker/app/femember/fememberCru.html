@@ -1,0 +1,556 @@
+<#escape x as x?html>
+
+<SCRIPT type="text/javascript">
+<!--
+
+jQuery(document).ready(function(){
+	//回选 下拉框
+	//jQuery("#search_state option[value='是']").prop("selected",true);
+	
+	/*
+	$('.date-picker').datepicker({
+		    autoclose: true,
+		    format: 'yyyy-mm-dd',
+		    language: 'zh-CN'
+		    //,todayBtn: 'linked',
+		    //startDate:new Date(2014,10,27),
+			//endDate:'+60d',
+		    //startDate: '+1d',
+		}).next().on(ace.click_event, function(){
+			$(this).prev().focus();
+		});
+	*/
+	
+	
+	
+	});
+	
+	
+//-->
+</SCRIPT>
+
+
+
+<div class="row">
+	<div class="col-xs-12">
+		<form class="form-horizontal" id="validation-form" method="POST" novalidate="novalidate" action="${ctx}/femember/update" > 
+			<input type="hidden" id="member_id" name="member_id" value="${(returnDatas.data.member_id)!''}"/>	
+<!--input  hidden  End-->
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="parent_id" >parent_id</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="parent_id" class="col-xs-12 col-sm-6" id="parent_id" value="${(returnDatas.data.parent_id)!''}"  type="text" />
+					</div><div class="help-block" for="parent_id"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="lv_id" >lv_id</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="lv_id" class="col-xs-12 col-sm-6" id="lv_id" value="${(returnDatas.data.lv_id)!''}"  type="text" />
+					</div><div class="help-block" for="lv_id"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="nickname" >昵称</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="nickname" class="col-xs-12 col-sm-6" id="nickname" value="${(returnDatas.data.nickname)!''}"  type="text" />
+					</div><div class="help-block" for="nickname"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="login_name" >登录名</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="login_name" class="col-xs-12 col-sm-6" id="login_name" value="${(returnDatas.data.login_name)!''}"  type="text" />
+					</div><div class="help-block" for="login_name"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="first_name" >名</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="first_name" class="col-xs-12 col-sm-6" id="first_name" value="${(returnDatas.data.first_name)!''}"  type="text" />
+					</div><div class="help-block" for="first_name"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="last_name" >姓</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="last_name" class="col-xs-12 col-sm-6" id="last_name" value="${(returnDatas.data.last_name)!''}"  type="text" />
+					</div><div class="help-block" for="last_name"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="english_name" >英文名</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="english_name" class="col-xs-12 col-sm-6" id="english_name" value="${(returnDatas.data.english_name)!''}"  type="text" />
+					</div><div class="help-block" for="english_name"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="real_name" >真实姓名</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="real_name" class="col-xs-12 col-sm-6" id="real_name" value="${(returnDatas.data.real_name)!''}"  type="text" />
+					</div><div class="help-block" for="real_name"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="pinyin_name" >真实姓名拼音拼写</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="pinyin_name" class="col-xs-12 col-sm-6" id="pinyin_name" value="${(returnDatas.data.pinyin_name)!''}"  type="text" />
+					</div><div class="help-block" for="pinyin_name"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="nationality" >民族：建立民族描述与代码映射。ConstantMapping</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="nationality" class="col-xs-12 col-sm-6" id="nationality" value="${(returnDatas.data.nationality)!''}"  type="text" />
+					</div><div class="help-block" for="nationality"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="email" >邮箱</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="email" class="col-xs-12 col-sm-6" id="email" value="${(returnDatas.data.email)!''}"  type="text" />
+					</div><div class="help-block" for="email"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password" >密码</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="password" class="col-xs-12 col-sm-6" id="password" value="${(returnDatas.data.password)!''}"  type="text" />
+					</div><div class="help-block" for="password"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="pw_answer" >密码答案</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="pw_answer" class="col-xs-12 col-sm-6" id="pw_answer" value="${(returnDatas.data.pw_answer)!''}"  type="text" />
+					</div><div class="help-block" for="pw_answer"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="pw_question" >密码问题</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="pw_question" class="col-xs-12 col-sm-6" id="pw_question" value="${(returnDatas.data.pw_question)!''}"  type="text" />
+					</div><div class="help-block" for="pw_question"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="gender" >性别：1女 2男</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="gender" class="col-xs-12 col-sm-6" id="gender" value="${(returnDatas.data.gender)!''}"  type="text" />
+					</div><div class="help-block" for="gender"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="birthday" >出生日期</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="birthday" class="col-xs-12 col-sm-6" id="birthday" value="${(returnDatas.data.birthday)!''}"  type="text" />
+					</div><div class="help-block" for="birthday"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="company_tel" >工作电话010-8888888-88</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="company_tel" class="col-xs-12 col-sm-6" id="company_tel" value="${(returnDatas.data.company_tel)!''}"  type="text" />
+					</div><div class="help-block" for="company_tel"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="family_tel" >家庭电话010-8888888-88</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="family_tel" class="col-xs-12 col-sm-6" id="family_tel" value="${(returnDatas.data.family_tel)!''}"  type="text" />
+					</div><div class="help-block" for="family_tel"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="mobile" >手机号</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="mobile" class="col-xs-12 col-sm-6" id="mobile" value="${(returnDatas.data.mobile)!''}"  type="text" />
+					</div><div class="help-block" for="mobile"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="fax" >传真</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="fax" class="col-xs-12 col-sm-6" id="fax" value="${(returnDatas.data.fax)!''}"  type="text" />
+					</div><div class="help-block" for="fax"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="country" >国家码，标准的字符国家代码</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="country" class="col-xs-12 col-sm-6" id="country" value="${(returnDatas.data.country)!''}"  type="text" />
+					</div><div class="help-block" for="country"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="province" >省份</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="province" class="col-xs-12 col-sm-6" id="province" value="${(returnDatas.data.province)!''}"  type="text" />
+					</div><div class="help-block" for="province"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="city" >城市</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="city" class="col-xs-12 col-sm-6" id="city" value="${(returnDatas.data.city)!''}"  type="text" />
+					</div><div class="help-block" for="city"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="region" >地区</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="region" class="col-xs-12 col-sm-6" id="region" value="${(returnDatas.data.region)!''}"  type="text" />
+					</div><div class="help-block" for="region"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="province_id" >省份ID</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="province_id" class="col-xs-12 col-sm-6" id="province_id" value="${(returnDatas.data.province_id)!''}"  type="text" />
+					</div><div class="help-block" for="province_id"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="city_id" >城市ID</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="city_id" class="col-xs-12 col-sm-6" id="city_id" value="${(returnDatas.data.city_id)!''}"  type="text" />
+					</div><div class="help-block" for="city_id"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="region_id" >地区ID</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="region_id" class="col-xs-12 col-sm-6" id="region_id" value="${(returnDatas.data.region_id)!''}"  type="text" />
+					</div><div class="help-block" for="region_id"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="zip" >邮编</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="zip" class="col-xs-12 col-sm-6" id="zip" value="${(returnDatas.data.zip)!''}"  type="text" />
+					</div><div class="help-block" for="zip"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="point" >积分</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="point" class="col-xs-12 col-sm-6" id="point" value="${(returnDatas.data.point)!''}"  type="text" />
+					</div><div class="help-block" for="point"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="activate_code" >用户激活码</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="activate_code" class="col-xs-12 col-sm-6" id="activate_code" value="${(returnDatas.data.activate_code)!''}"  type="text" />
+					</div><div class="help-block" for="activate_code"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="temp_password" >用户临时密码</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="temp_password" class="col-xs-12 col-sm-6" id="temp_password" value="${(returnDatas.data.temp_password)!''}"  type="text" />
+					</div><div class="help-block" for="temp_password"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="message_count" >用户消息数</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="message_count" class="col-xs-12 col-sm-6" id="message_count" value="${(returnDatas.data.message_count)!''}"  type="text" />
+					</div><div class="help-block" for="message_count"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="avatar" >用户头像</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="avatar" class="col-xs-12 col-sm-6" id="avatar" value="${(returnDatas.data.avatar)!''}"  type="text" />
+					</div><div class="help-block" for="avatar"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="mp" >mp</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="mp" class="col-xs-12 col-sm-6" id="mp" value="${(returnDatas.data.mp)!''}"  type="text" />
+					</div><div class="help-block" for="mp"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="qq" >qq</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="qq" class="col-xs-12 col-sm-6" id="qq" value="${(returnDatas.data.qq)!''}"  type="text" />
+					</div><div class="help-block" for="qq"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="msn" >msn</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="msn" class="col-xs-12 col-sm-6" id="msn" value="${(returnDatas.data.msn)!''}"  type="text" />
+					</div><div class="help-block" for="msn"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="remark" >备注</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="remark" class="col-xs-12 col-sm-6" id="remark" value="${(returnDatas.data.remark)!''}"  type="text" />
+					</div><div class="help-block" for="remark"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="first_ip" >第一次登录IP</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="first_ip" class="col-xs-12 col-sm-6" id="first_ip" value="${(returnDatas.data.first_ip)!''}"  type="text" />
+					</div><div class="help-block" for="first_ip"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="last_ip" >最后一次登录IP</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="last_ip" class="col-xs-12 col-sm-6" id="last_ip" value="${(returnDatas.data.last_ip)!''}"  type="text" />
+					</div><div class="help-block" for="last_ip"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+					<!--日期型-->
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="last_login" >最后登录时间</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+					 <div class="input-group col-xs-12 col-sm-6">
+						<input name="last_login"  class="form-control date-picker"  id="last_login" readonly="readonly" value="${(returnDatas.data.last_login)!''}"  type="text" />
+					        <span class="input-group-addon">
+								<i class="fa fa-calendar bigger-110"></i>
+							</span>
+					   </div>
+					
+					</div><div class="help-block" for="last_login"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+					<!--日期型-->
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="create_time" >创建时间</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+					 <div class="input-group col-xs-12 col-sm-6">
+						<input name="create_time"  class="form-control date-picker"  id="create_time" readonly="readonly" value="${(returnDatas.data.create_time)!''}"  type="text" />
+					        <span class="input-group-addon">
+								<i class="fa fa-calendar bigger-110"></i>
+							</span>
+					   </div>
+					
+					</div><div class="help-block" for="create_time"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+					<!--日期型-->
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="modify_time" >修改时间</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+					 <div class="input-group col-xs-12 col-sm-6">
+						<input name="modify_time"  class="form-control date-picker"  id="modify_time" readonly="readonly" value="${(returnDatas.data.modify_time)!''}"  type="text" />
+					        <span class="input-group-addon">
+								<i class="fa fa-calendar bigger-110"></i>
+							</span>
+					   </div>
+					
+					</div><div class="help-block" for="modify_time"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="deputy_sn" >业务代表编码</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="deputy_sn" class="col-xs-12 col-sm-6" id="deputy_sn" value="${(returnDatas.data.deputy_sn)!''}"  type="text" />
+					</div><div class="help-block" for="deputy_sn"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="is_deputy" >0系统用户、1门店业务代表、2非门店业务代表、3客户</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="is_deputy" class="col-xs-12 col-sm-6" id="is_deputy" value="${(returnDatas.data.is_deputy)!''}"  type="text" />
+					</div><div class="help-block" for="is_deputy"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="deputy_state" >审核状态：0未通过审核 1.通过审核</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="deputy_state" class="col-xs-12 col-sm-6" id="deputy_state" value="${(returnDatas.data.deputy_state)!''}"  type="text" />
+					</div><div class="help-block" for="deputy_state"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="login_count" >登录次数</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="login_count" class="col-xs-12 col-sm-6" id="login_count" value="${(returnDatas.data.login_count)!''}"  type="text" />
+					</div><div class="help-block" for="login_count"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="disabled" >是否可用  0=可用 1=不可用</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="disabled" class="col-xs-12 col-sm-6" id="disabled" value="${(returnDatas.data.disabled)!''}"  type="text" />
+					</div><div class="help-block" for="disabled"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="code" >code</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="code" class="col-xs-12 col-sm-6" id="code" value="${(returnDatas.data.code)!''}"  type="text" />
+					</div><div class="help-block" for="code"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="belongs_deputy" >客户所属业务代表ID，值=member_id</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="belongs_deputy" class="col-xs-12 col-sm-6" id="belongs_deputy" value="${(returnDatas.data.belongs_deputy)!''}"  type="text" />
+					</div><div class="help-block" for="belongs_deputy"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="cre_sn" >证件号码 作为先上传附件时唯一关联用</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="cre_sn" class="col-xs-12 col-sm-6" id="cre_sn" value="${(returnDatas.data.cre_sn)!''}"  type="text" />
+					</div><div class="help-block" for="cre_sn"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="is_businessman" >是否商户用户</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="is_businessman" class="col-xs-12 col-sm-6" id="is_businessman" value="${(returnDatas.data.is_businessman)!''}"  type="text" />
+					</div><div class="help-block" for="is_businessman"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="aff_org" >归属区域</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="aff_org" class="col-xs-12 col-sm-6" id="aff_org" value="${(returnDatas.data.aff_org)!''}"  type="text" />
+					</div><div class="help-block" for="aff_org"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="weixin" >微信</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="weixin" class="col-xs-12 col-sm-6" id="weixin" value="${(returnDatas.data.weixin)!''}"  type="text" />
+					</div><div class="help-block" for="weixin"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="openid" >客户微信ID</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="openid" class="col-xs-12 col-sm-6" id="openid" value="${(returnDatas.data.openid)!''}"  type="text" />
+					</div><div class="help-block" for="openid"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+		</form>
+		<div class="wizard-actions">
+			<button class="btn btn-success btn-info" data-last="Finish" onclick="commonUpdateForm('validation-form','${ctx}/femember/list');">
+				保存
+			</button>
+		</div>
+	</div>
+</div>
+
+
+</#escape>

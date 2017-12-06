@@ -1,0 +1,425 @@
+<#escape x as x?html>
+
+<script type="text/javascript" src="${ctx}/js/app/feloan/feloan.js"></script>
+
+<script type="text/javascript">
+
+function deleteFeLoan(){
+	var id=jQuery("#id").val();
+	if(!id||id==""){
+		myalert("请选择你要删除的记录");
+		return;
+	}else{
+		var _url="${ctx}/feloan/delete?id="+id;
+		var listurl="${ctx}/feloan/list";
+		mydelete(_url,listurl);
+	}
+}
+</script>
+
+
+	
+
+<!-- /.page-header -->
+
+<div class="row">
+    <div class="col-xs-12">
+<div class="operate panel panel-default" style="height:65px;">
+	<div class="panel-body">
+		<div class="pull-left">
+ <form class="form-horizontal" name="searchForm" id="searchForm" action="${ctx}/feloan/list" role="form">
+            <input type="hidden" name="pageIndex" id="pageIndex" value="${(returnDatas.page.pageIndex)!'1'}"/>
+            <input type="hidden" name="sort" id="page_sort" value="${(returnDatas.page.sort)!'desc'}"/>
+            <input type="hidden" name="order" id="page_order" value="${(returnDatas.page.order)!'id'}"/>
+			<label for="search_state"><b>是否可用:</b></label> 
+			 <select id="search_state" name="state" class="col-10" >
+				<option value="是">是</option>
+				<option value="否">否</option>
+			</select>
+			<a  href="javascript:mySubmitForm('searchForm');"
+				class="btn btn-purple btn-sm">
+					查询 <i class="ace-icon fa fa-search icon-on-right bigger-10"></i>
+				</a>
+
+</form>
+		</div>
+		<div class="pull-right">
+			    <@shiro.hasPermission name="/feloan/list/export" >
+				  <button onclick="myexport('searchForm','${ctx}/feloan/list/export');" class="btn  btn-sm  btn-primary">
+                      
+                        导出
+                    </button>
+		    	</@shiro.hasPermission>
+			    <@shiro.hasPermission name="/feloan/update" >
+				  <button onclick="myhref('${ctx}/feloan/update/pre');" class="btn  btn-sm  btn-primary">
+                        添加
+                    </button>
+			    </@shiro.hasPermission>
+			    <@shiro.hasPermission name="/feloan/delete" >
+			    |
+				  <button onclick="deleteFeLoan();" class="btn btn-sm btn-danger">
+                        删除
+                    </button>
+			    </@shiro.hasPermission>
+			
+		</div>
+	</div>
+</div>
+
+   <div class="row">
+            <div class="col-xs-12">
+	            <!--start_export-->
+                <table id="listDataTable" border="1" class="table table-striped table-bordered table-hover">
+                    <!--end_no_export-->
+                    <!--first_start_export-->
+                    <thead>
+                    <tr>
+                        <!--first_start_no_export-->
+                        <th class="center">
+                            <label class="position-relative">
+                                <input class="ace" type="checkbox">
+                                <span class="lbl"></span>
+                            </label>
+                        </th>
+                        <th>操作</th>
+                        <!--first_end_no_export-->
+						<th id="th_apply_sn" >申请书编号</th>
+						<th id="th_clientele_type" >客户类型 代码表</th>
+						<th id="th_channel_type" >渠道类型 代码表</th>
+						<th id="th_activity_type" >活动类型 代码表</th>
+						<th id="th_repayment_basis" >还款方式 代码表</th>
+						<th id="th_loan_product" >贷款产品 LM_LOAN_CALCULATION表中PRODUCT_ID</th>
+						<th id="th_order_id" >购买商品订单</th>
+						<th id="th_goods_total" >商品总价</th>
+						<th id="th_down_pay" >首付金额</th>
+						<th id="th_loan_money" >贷款金额</th>
+						<th id="th_periods" >分期期数</th>
+						<th id="th_down_date" >首次还款日</th>
+						<th id="th_per_month_date" >每月还款日</th>
+						<th id="th_last_date" >最后还款日</th>
+						<th id="th_down_money" >首次还款额</th>
+						<th id="th_per_month_money" >每月还款额</th>
+						<th id="th_last_money" >最后还款额</th>
+						<th id="th_total_money" >总还款额</th>
+						<th id="th_month_assure_money" >每月担保费</th>
+						<th id="th_total_assure_money" >总担保费</th>
+						<th id="th_formalities_money" >手续费</th>
+						<th id="th_loan_sn" >贷款产品代码 代码表</th>
+						<th id="th_loan_agency" >贷款发放机构代码 代码表</th>
+						<th id="th_loan_type_sn" >贷款类型代码 代码表</th>
+						<th id="th_loan_type" >贷款类型</th>
+						<th id="th_repayment_name" >还款账户名</th>
+						<th id="th_repayment_account" >还款帐号</th>
+						<th id="th_repayment_bank" >还款账户开户行代码 代码表</th>
+						<th id="th_sell_sn" >销售点代码 sell_sn=business_id</th>
+						<th id="th_deputy_sn" >销售代表代码 deputy_sn=member_id</th>
+						<th id="th_deputy_name" >销售代表姓名</th>
+						<th id="th_deputy_mobile" >销售代表手机号</th>
+						<th id="th_promoter_sn" >促销员代码 promoter_sn=member_id</th>
+						<th id="th_promoter_name" >促销员姓名</th>
+						<th id="th_promoter_mobile" >促销员手机号</th>
+						<th id="th_trial_sn" >初审代码 业务代表填写</th>
+						<th id="th_trial_opinion" >初审意见 业务代表填写</th>
+						<th id="th_trial_remark" >初审备注 业务代表填写</th>
+						<th id="th_audit_sn" >审核代码 审核员填写</th>
+						<th id="th_audit_say" >审核意见 审核员填写</th>
+						<th id="th_audit_remark" >审核备注 审核员填写</th>
+						<th id="th_archive_type" >归档类型</th>
+						<th id="th_auth_sn" >授权号</th>
+						<th id="th_audit_state" >audit_state</th>
+						<th id="th_back_remark" >退单备注</th>
+						<th id="th_back_reason" >退单原因</th>
+						<th id="th_refuse_reason" >拒绝原因</th>
+						<th id="th_except_reason" >异常原因</th>
+						<th id="th_apply_time" >申请时间</th>
+						<th id="th_audit_time" >审核时间</th>
+						<th id="th_business_sn" >商户代码</th>
+						<th id="th_shop_sn" >门店代码</th>
+						<th id="th_funds_sn" >funds_sn</th>
+						<th id="th_loans_state" >放款状态</th>
+						<th id="th_borrow_reason" >borrow_reason</th>
+						<th id="th_loanAmt" >loanAmt</th>
+						<th id="th_loanReqAmt" >loanReqAmt</th>
+						<th id="th_businessName" >商户名称</th>
+						<th id="th_productName" >商品名称</th>
+						<th id="th_gurantorRate" >担保率</th>
+						<th id="th_gurantorFee" >担保费</th>
+						<th id="th_yearRate" >年化率</th>
+						<th id="th_costRate" >资金成本率</th>
+						<th id="th_confirmrefuse_reason" >复审退回原因</th>
+                    </tr>
+                    </thead>
+                    <!--first_end_export-->
+
+                    <!--start_export-->
+                    <tbody>
+           
+				   <#if (returnDatas.data??)&&(returnDatas.data?size>0)>
+					 <#list returnDatas.data as _data>
+                            <!--start_no_export-->
+                            <tr class="">
+                                <td class="center">
+                                    <label class="position-relative">
+                                        <input name="check_li" value="${_data.id}" class="ace" type="checkbox">
+                                        <span class="lbl"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div class="hidden-sm hidden-xs btn-group">
+                                        <button class="btn btn-xs btn-info"
+                                                onclick="myhref('${ctx}/feloan/update/pre?member_id=${(_data.id)!''}');">
+                                            <i class="ace-icon fa fa-pencil bigger-120"></i>
+                                        </button>
+                                        <button class="btn btn-xs btn-danger"
+                                                onclick="mydelete('${ctx}/feloan/delete?member_id=${(_data.id)!''}','${ctx}/feloan/list');">
+                                            <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                        </button>
+                                    </div>
+                                    <div class="hidden-md hidden-lg">
+                                        <div class="inline position-relative">
+                                            <button class="btn btn-minier btn-primary dropdown-toggle"
+                                                    data-toggle="dropdown" data-position="auto">
+                                                <i class="ace-icon fa fa-cog icon-only bigger-110"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+	                                          <li>
+													<a  href="javascript:myhref('${ctx}/feloan/look?member_id=${(_data.id)!''}');"  class="tooltip-info" data-rel="tooltip" title="View">
+														<span class="blue">
+															<i class="ace-icon fa fa-search-plus bigger-120"></i>
+														</span>
+													</a>
+											  </li>	
+                                                <li>
+                                                    <a data-original-title="Edit"
+                                                       href="javascript:myhref('${ctx}/feloan/update/pre?member_id=${(_data.id)!''}');"
+                                                       class="tooltip-success" data-rel="tooltip" title="">
+																		<span class="green">
+																			<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+																		</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a data-original-title="Delete"
+                                                       href="javascript:mydelete('${ctx}/feloan/delete?member_id=${(_data.id)!''}','${ctx}/feloan/list');"
+                                                       class="tooltip-error" data-rel="tooltip" title="">
+																		<span class="red">
+																			<i class="ace-icon fa fa-trash-o bigger-120"></i>
+																		</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                                <!--end_no_export-->
+
+							<td >
+								${(_data.apply_sn)!''}
+							</td>
+							<td >
+								${(_data.clientele_type)!''}
+							</td>
+							<td >
+								${(_data.channel_type)!''}
+							</td>
+							<td >
+								${(_data.activity_type)!''}
+							</td>
+							<td >
+								${(_data.repayment_basis)!''}
+							</td>
+							<td >
+								${(_data.loan_product)!0}
+							</td>
+							<td >
+								${(_data.order_id)!0}
+							</td>
+							<td >
+								${(_data.goods_total)!0}
+							</td>
+							<td >
+								${(_data.down_pay)!0}
+							</td>
+							<td >
+								${(_data.loan_money)!0}
+							</td>
+							<td >
+								${(_data.periods)!0}
+							</td>
+							<td >
+								${(_data.down_date)!''}
+							</td>
+							<td >
+								${(_data.per_month_date)!''}
+							</td>
+							<td >
+								${(_data.last_date)!''}
+							</td>
+							<td >
+								${(_data.down_money)!0}
+							</td>
+							<td >
+								${(_data.per_month_money)!0}
+							</td>
+							<td >
+								${(_data.last_money)!0}
+							</td>
+							<td >
+								${(_data.total_money)!0}
+							</td>
+							<td >
+								${(_data.month_assure_money)!0}
+							</td>
+							<td >
+								${(_data.total_assure_money)!0}
+							</td>
+							<td >
+								${(_data.formalities_money)!0}
+							</td>
+							<td >
+								${(_data.loan_sn)!''}
+							</td>
+							<td >
+								${(_data.loan_agency)!''}
+							</td>
+							<td >
+								${(_data.loan_type_sn)!''}
+							</td>
+							<td >
+								${(_data.loan_type)!''}
+							</td>
+							<td >
+								${(_data.repayment_name)!''}
+							</td>
+							<td >
+								${(_data.repayment_account)!''}
+							</td>
+							<td >
+								${(_data.repayment_bank)!''}
+							</td>
+							<td >
+								${(_data.sell_sn)!''}
+							</td>
+							<td >
+								${(_data.deputy_sn)!''}
+							</td>
+							<td >
+								${(_data.deputy_name)!''}
+							</td>
+							<td >
+								${(_data.deputy_mobile)!''}
+							</td>
+							<td >
+								${(_data.promoter_sn)!''}
+							</td>
+							<td >
+								${(_data.promoter_name)!''}
+							</td>
+							<td >
+								${(_data.promoter_mobile)!''}
+							</td>
+							<td >
+								${(_data.trial_sn)!''}
+							</td>
+							<td >
+								${(_data.trial_opinion)!''}
+							</td>
+							<td >
+								${(_data.trial_remark)!''}
+							</td>
+							<td >
+								${(_data.audit_sn)!''}
+							</td>
+							<td >
+								${(_data.audit_say)!''}
+							</td>
+							<td >
+								${(_data.audit_remark)!''}
+							</td>
+							<td >
+								${(_data.archive_type)!''}
+							</td>
+							<td >
+								${(_data.auth_sn)!''}
+							</td>
+							<td >
+								${(_data.audit_state)!''}
+							</td>
+							<td >
+								${(_data.back_remark)!''}
+							</td>
+							<td >
+								${(_data.back_reason)!''}
+							</td>
+							<td >
+								${(_data.refuse_reason)!''}
+							</td>
+							<td >
+								${(_data.except_reason)!''}
+							</td>
+							<td >
+								<!--日期型-->
+							${((_data.apply_time)?string('yyyy-MM-dd'))!''}
+							</td>
+							<td >
+								<!--日期型-->
+							${((_data.audit_time)?string('yyyy-MM-dd'))!''}
+							</td>
+							<td >
+								${(_data.business_sn)!''}
+							</td>
+							<td >
+								${(_data.shop_sn)!''}
+							</td>
+							<td >
+								${(_data.funds_sn)!''}
+							</td>
+							<td >
+								${(_data.loans_state)!0}
+							</td>
+							<td >
+								${(_data.borrow_reason)!''}
+							</td>
+							<td >
+								${(_data.loanAmt)!0}
+							</td>
+							<td >
+								${(_data.loanReqAmt)!0}
+							</td>
+							<td >
+								${(_data.businessName)!''}
+							</td>
+							<td >
+								${(_data.productName)!''}
+							</td>
+							<td >
+								${(_data.gurantorRate)!0}
+							</td>
+							<td >
+								${(_data.gurantorFee)!0}
+							</td>
+							<td >
+								${(_data.yearRate)!0}
+							</td>
+							<td >
+								${(_data.costRate)!0}
+							</td>
+							<td >
+								${(_data.confirmrefuse_reason)!''}
+							</td>
+						</tr>
+					</#list>
+					 </#if>
+                    </tbody>
+                </table>
+                <!--end_export-->
+            </div>
+            <!-- /.span -->
+        </div>
+        <#if returnDatas.page??>	
+            <@h.pagetoolbar page=returnDatas.page formId='searchForm' />
+         </#if>
+    </div>
+</div>
+<!-- /.main-container -->
+</#escape>

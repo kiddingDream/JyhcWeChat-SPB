@@ -1,0 +1,121 @@
+<#escape x as x?html>
+
+<SCRIPT type="text/javascript">
+<!--
+
+jQuery(document).ready(function(){
+	//回选 下拉框
+	//jQuery("#search_state option[value='是']").prop("selected",true);
+	
+	/*
+	$('.date-picker').datepicker({
+		    autoclose: true,
+		    format: 'yyyy-mm-dd',
+		    language: 'zh-CN'
+		    //,todayBtn: 'linked',
+		    //startDate:new Date(2014,10,27),
+			//endDate:'+60d',
+		    //startDate: '+1d',
+		}).next().on(ace.click_event, function(){
+			$(this).prev().focus();
+		});
+	*/
+	
+	
+	
+	});
+	
+	
+//-->
+</SCRIPT>
+
+
+
+<div class="row">
+	<div class="col-xs-12">
+		<form class="form-horizontal" id="validation-form" method="POST" novalidate="novalidate" action="${ctx}/appversionupdate/update" > 
+			<input type="hidden" id="id" name="id" value="${(returnDatas.data.id)!''}"/>	
+<!--input  hidden  End-->
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="title" >标题</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="title" class="col-xs-12 col-sm-6" id="title" value="${(returnDatas.data.title)!''}"  type="text" />
+					</div><div class="help-block" for="title"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="content" >升级内容</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="content" class="col-xs-12 col-sm-6" id="content" value="${(returnDatas.data.content)!''}"  type="text" />
+					</div><div class="help-block" for="content"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="url" >升级包下载地址</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="url" class="col-xs-12 col-sm-6" id="url" value="${(returnDatas.data.url)!''}"  type="text" />
+					</div><div class="help-block" for="url"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="type" >0 提示升级 1 强制升级</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="type" class="col-xs-12 col-sm-6" id="type" value="${(returnDatas.data.type)!''}"  type="text" />
+					</div><div class="help-block" for="type"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="version" >版本号</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="version" class="col-xs-12 col-sm-6" id="version" value="${(returnDatas.data.version)!''}"  type="text" />
+					</div><div class="help-block" for="version"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="c" >客户端类型</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="c" class="col-xs-12 col-sm-6" id="c" value="${(returnDatas.data.c)!''}"  type="text" />
+					</div><div class="help-block" for="c"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="ch" >渠道号</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="ch" class="col-xs-12 col-sm-6" id="ch" value="${(returnDatas.data.ch)!''}"  type="text" />
+					</div><div class="help-block" for="ch"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="disabled" >0:正常;1:回收站</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="disabled" class="col-xs-12 col-sm-6" id="disabled" value="${(returnDatas.data.disabled)!''}"  type="text" />
+					</div><div class="help-block" for="disabled"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+		</form>
+		<div class="wizard-actions">
+			<button class="btn btn-success btn-info" data-last="Finish" onclick="commonUpdateForm('validation-form','${ctx}/appversionupdate/list');">
+				保存
+			</button>
+		</div>
+	</div>
+</div>
+
+
+</#escape>

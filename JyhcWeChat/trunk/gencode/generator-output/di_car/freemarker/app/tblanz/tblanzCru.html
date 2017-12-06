@@ -1,0 +1,126 @@
+<#escape x as x?html>
+
+<SCRIPT type="text/javascript">
+<!--
+
+jQuery(document).ready(function(){
+	//回选 下拉框
+	//jQuery("#search_state option[value='是']").prop("selected",true);
+	
+	/*
+	$('.date-picker').datepicker({
+		    autoclose: true,
+		    format: 'yyyy-mm-dd',
+		    language: 'zh-CN'
+		    //,todayBtn: 'linked',
+		    //startDate:new Date(2014,10,27),
+			//endDate:'+60d',
+		    //startDate: '+1d',
+		}).next().on(ace.click_event, function(){
+			$(this).prev().focus();
+		});
+	*/
+	
+	
+	
+	});
+	
+	
+//-->
+</SCRIPT>
+
+
+
+<div class="row">
+	<div class="col-xs-12">
+		<form class="form-horizontal" id="validation-form" method="POST" novalidate="novalidate" action="${ctx}/tblanz/update" > 
+			<input type="hidden" id="id" name="id" value="${(returnDatas.data.id)!''}"/>	
+<!--input  hidden  End-->
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="phone" >phone</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="phone" class="col-xs-12 col-sm-6" id="phone" value="${(returnDatas.data.phone)!''}"  type="text" />
+					</div><div class="help-block" for="phone"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="msg" >msg</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="msg" class="col-xs-12 col-sm-6" id="msg" value="${(returnDatas.data.msg)!''}"  type="text" />
+					</div><div class="help-block" for="msg"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+					<!--日期型-->
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="insertTime" >insertTime</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+					 <div class="input-group col-xs-12 col-sm-6">
+						<input name="insertTime"  class="form-control date-picker"  id="insertTime" readonly="readonly" value="${(returnDatas.data.insertTime)!''}"  type="text" />
+					        <span class="input-group-addon">
+								<i class="fa fa-calendar bigger-110"></i>
+							</span>
+					   </div>
+					
+					</div><div class="help-block" for="insertTime"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+					<!--日期型-->
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="sendTime" >sendTime</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+					 <div class="input-group col-xs-12 col-sm-6">
+						<input name="sendTime"  class="form-control date-picker"  id="sendTime" readonly="readonly" value="${(returnDatas.data.sendTime)!''}"  type="text" />
+					        <span class="input-group-addon">
+								<i class="fa fa-calendar bigger-110"></i>
+							</span>
+					   </div>
+					
+					</div><div class="help-block" for="sendTime"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="channelCode" >channelCode</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="channelCode" class="col-xs-12 col-sm-6" id="channelCode" value="${(returnDatas.data.channelCode)!''}"  type="text" />
+					</div><div class="help-block" for="channelCode"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="sendEnd" >sendEnd</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="sendEnd" class="col-xs-12 col-sm-6" id="sendEnd" value="${(returnDatas.data.sendEnd)!''}"  type="text" />
+					</div><div class="help-block" for="sendEnd"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="smsTemplate" >smsTemplate</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="smsTemplate" class="col-xs-12 col-sm-6" id="smsTemplate" value="${(returnDatas.data.smsTemplate)!''}"  type="text" />
+					</div><div class="help-block" for="smsTemplate"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+		</form>
+		<div class="wizard-actions">
+			<button class="btn btn-success btn-info" data-last="Finish" onclick="commonUpdateForm('validation-form','${ctx}/tblanz/list');">
+				保存
+			</button>
+		</div>
+	</div>
+</div>
+
+
+</#escape>

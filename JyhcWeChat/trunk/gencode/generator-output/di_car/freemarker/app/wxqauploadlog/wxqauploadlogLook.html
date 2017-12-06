@@ -1,0 +1,56 @@
+<#escape x as x?html>
+<div class="row">
+	<div class="col-xs-12">
+		<!--input  hidden  Start-->
+	<input type="hidden" id="id" name="id" value="${(returnDatas.data.id}"/>	
+<!--input  hidden  End-->
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="login_name" >login_name</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.login_name)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="real_name" >real_name</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.real_name)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="file_name" >file_name</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+								${(returnDatas.data.file_name)!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+					<!--日期型-->
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="upload_time" >upload_time</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+									${(returnDatas.data.((wxQaUploadlog.upload_time)?string('yyyy-MM-dd'))!'' )!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+					<!--日期型-->
+						<div class="form-group">
+							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="modify_time" >modify_time</label>
+							<div class="col-xs-12 col-sm-9">
+								<div class="clearfix">
+									${(returnDatas.data.((wxQaUploadlog.modify_time)?string('yyyy-MM-dd'))!'' )!''}
+								</div>
+							</div>
+						</div>
+	                    <div class="space-2"></div>
+	</div><!-- /.col -->
+</div>
+</#escape>

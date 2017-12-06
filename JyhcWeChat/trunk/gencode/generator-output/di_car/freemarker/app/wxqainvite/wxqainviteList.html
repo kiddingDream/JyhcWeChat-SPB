@@ -1,0 +1,223 @@
+<#escape x as x?html>
+
+<script type="text/javascript" src="${ctx}/js/app/wxqainvite/wxqainvite.js"></script>
+
+<script type="text/javascript">
+
+function deleteWxQaInvite(){
+	var id=jQuery("#id").val();
+	if(!id||id==""){
+		myalert("请选择你要删除的记录");
+		return;
+	}else{
+		var _url="${ctx}/wxqainvite/delete?id="+id;
+		var listurl="${ctx}/wxqainvite/list";
+		mydelete(_url,listurl);
+	}
+}
+</script>
+
+
+	
+
+<!-- /.page-header -->
+
+<div class="row">
+    <div class="col-xs-12">
+<div class="operate panel panel-default" style="height:65px;">
+	<div class="panel-body">
+		<div class="pull-left">
+ <form class="form-horizontal" name="searchForm" id="searchForm" action="${ctx}/wxqainvite/list" role="form">
+            <input type="hidden" name="pageIndex" id="pageIndex" value="${(returnDatas.page.pageIndex)!'1'}"/>
+            <input type="hidden" name="sort" id="page_sort" value="${(returnDatas.page.sort)!'desc'}"/>
+            <input type="hidden" name="order" id="page_order" value="${(returnDatas.page.order)!'id'}"/>
+			<label for="search_state"><b>是否可用:</b></label> 
+			 <select id="search_state" name="state" class="col-10" >
+				<option value="是">是</option>
+				<option value="否">否</option>
+			</select>
+			<a  href="javascript:mySubmitForm('searchForm');"
+				class="btn btn-purple btn-sm">
+					查询 <i class="ace-icon fa fa-search icon-on-right bigger-10"></i>
+				</a>
+
+</form>
+		</div>
+		<div class="pull-right">
+			    <@shiro.hasPermission name="/wxqainvite/list/export" >
+				  <button onclick="myexport('searchForm','${ctx}/wxqainvite/list/export');" class="btn  btn-sm  btn-primary">
+                      
+                        导出
+                    </button>
+		    	</@shiro.hasPermission>
+			    <@shiro.hasPermission name="/wxqainvite/update" >
+				  <button onclick="myhref('${ctx}/wxqainvite/update/pre');" class="btn  btn-sm  btn-primary">
+                        添加
+                    </button>
+			    </@shiro.hasPermission>
+			    <@shiro.hasPermission name="/wxqainvite/delete" >
+			    |
+				  <button onclick="deleteWxQaInvite();" class="btn btn-sm btn-danger">
+                        删除
+                    </button>
+			    </@shiro.hasPermission>
+			
+		</div>
+	</div>
+</div>
+
+   <div class="row">
+            <div class="col-xs-12">
+	            <!--start_export-->
+                <table id="listDataTable" border="1" class="table table-striped table-bordered table-hover">
+                    <!--end_no_export-->
+                    <!--first_start_export-->
+                    <thead>
+                    <tr>
+                        <!--first_start_no_export-->
+                        <th class="center">
+                            <label class="position-relative">
+                                <input class="ace" type="checkbox">
+                                <span class="lbl"></span>
+                            </label>
+                        </th>
+                        <th>操作</th>
+                        <!--first_end_no_export-->
+						<th id="th_openid" >openid,用于关联user表</th>
+						<th id="th_login_name" >登录名</th>
+						<th id="th_ancestor_code" >一级邀请码</th>
+						<th id="th_parent_code" >上级邀请码</th>
+						<th id="th_invite_code" >邀请码</th>
+						<th id="th_company_login_name" >惠今员工工号</th>
+						<th id="th_role" >B商户，S店员，C客户</th>
+						<th id="th_province" >所在省市</th>
+						<th id="th_ business_licence" >营业执照</th>
+						<th id="th_bank" >开户行</th>
+						<th id="th_bank_user_name" >银行账户名</th>
+						<th id="th_bank_account" >结算账户号</th>
+						<th id="th_contact_name" >联系人</th>
+						<th id="th_mobile" >手机号</th>
+                    </tr>
+                    </thead>
+                    <!--first_end_export-->
+
+                    <!--start_export-->
+                    <tbody>
+           
+				   <#if (returnDatas.data??)&&(returnDatas.data?size>0)>
+					 <#list returnDatas.data as _data>
+                            <!--start_no_export-->
+                            <tr class="">
+                                <td class="center">
+                                    <label class="position-relative">
+                                        <input name="check_li" value="${_data.id}" class="ace" type="checkbox">
+                                        <span class="lbl"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div class="hidden-sm hidden-xs btn-group">
+                                        <button class="btn btn-xs btn-info"
+                                                onclick="myhref('${ctx}/wxqainvite/update/pre?id=${(_data.id)!''}');">
+                                            <i class="ace-icon fa fa-pencil bigger-120"></i>
+                                        </button>
+                                        <button class="btn btn-xs btn-danger"
+                                                onclick="mydelete('${ctx}/wxqainvite/delete?id=${(_data.id)!''}','${ctx}/wxqainvite/list');">
+                                            <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                        </button>
+                                    </div>
+                                    <div class="hidden-md hidden-lg">
+                                        <div class="inline position-relative">
+                                            <button class="btn btn-minier btn-primary dropdown-toggle"
+                                                    data-toggle="dropdown" data-position="auto">
+                                                <i class="ace-icon fa fa-cog icon-only bigger-110"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+	                                          <li>
+													<a  href="javascript:myhref('${ctx}/wxqainvite/look?id=${(_data.id)!''}');"  class="tooltip-info" data-rel="tooltip" title="View">
+														<span class="blue">
+															<i class="ace-icon fa fa-search-plus bigger-120"></i>
+														</span>
+													</a>
+											  </li>	
+                                                <li>
+                                                    <a data-original-title="Edit"
+                                                       href="javascript:myhref('${ctx}/wxqainvite/update/pre?id=${(_data.id)!''}');"
+                                                       class="tooltip-success" data-rel="tooltip" title="">
+																		<span class="green">
+																			<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+																		</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a data-original-title="Delete"
+                                                       href="javascript:mydelete('${ctx}/wxqainvite/delete?id=${(_data.id)!''}','${ctx}/wxqainvite/list');"
+                                                       class="tooltip-error" data-rel="tooltip" title="">
+																		<span class="red">
+																			<i class="ace-icon fa fa-trash-o bigger-120"></i>
+																		</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                                <!--end_no_export-->
+
+							<td >
+								${(_data.openid)!''}
+							</td>
+							<td >
+								${(_data.login_name)!''}
+							</td>
+							<td >
+								${(_data.ancestor_code)!''}
+							</td>
+							<td >
+								${(_data.parent_code)!''}
+							</td>
+							<td >
+								${(_data.invite_code)!''}
+							</td>
+							<td >
+								${(_data.company_login_name)!''}
+							</td>
+							<td >
+								${(_data.role)!''}
+							</td>
+							<td >
+								${(_data.province)!''}
+							</td>
+							<td >
+								${(_data. business_licence)!''}
+							</td>
+							<td >
+								${(_data.bank)!''}
+							</td>
+							<td >
+								${(_data.bank_user_name)!''}
+							</td>
+							<td >
+								${(_data.bank_account)!''}
+							</td>
+							<td >
+								${(_data.contact_name)!''}
+							</td>
+							<td >
+								${(_data.mobile)!''}
+							</td>
+						</tr>
+					</#list>
+					 </#if>
+                    </tbody>
+                </table>
+                <!--end_export-->
+            </div>
+            <!-- /.span -->
+        </div>
+        <#if returnDatas.page??>	
+            <@h.pagetoolbar page=returnDatas.page formId='searchForm' />
+         </#if>
+    </div>
+</div>
+<!-- /.main-container -->
+</#escape>

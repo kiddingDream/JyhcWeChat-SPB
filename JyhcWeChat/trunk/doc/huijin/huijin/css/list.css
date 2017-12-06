@@ -1,0 +1,184 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*login*/
+.con{ width:100%; height:100%;}
+.banner { width:100%; height:auto;}
+.tabT{ width:100%; height:auto; margin:3% 0 7%;}
+.lisT { width:100%; height:50px; background:#fff; border-top:1px solid #d7d7d7; border-bottom:1px solid #d7d7d7; position:relative;}
+.mar1{ margin:-1px 0 0;}
+.lisT_label { width:50px; height:50px;position:absolute;}
+.lisT_label img{  margin:12px 15px;}
+.itxt { border:none;  width: 83%; height: 50px; padding: 0 0 0 15%; line-height: 50px; border: none; color:#333;}
+.ma3 { margin:0 3%;}
+
+.hqY { display:block; width:25%; height:30px; position:absolute; top:20%; right:5%; color:#fff; background:#22b2fa; border-radius:3px; text-align:center; line-height:30px; border:none;}
+.teR{ width:90%; height:20px; margin:0 auto;}
+.lisT .yzmI{ margin-left: 10px; margin-top: 15px;}
+
+/*注册失败弹窗*/
+.grayBg{width: 100%; height: 100%; background: #000; opacity: 0.5; position:fixed; z-index: 1; display: none;  }
+.fail{ width:90%; height:30%; background:url(../img/zhuceshibai_r2_c3.png) repeat-x #fff; z-index:2; position:fixed; top:30%; left:5%; display:none;}
+.closeBtn{ display:block; width:20px; height:20px; background:url(../img/sprites.png) no-repeat; position:absolute; top:15px; right:3px;}
+.red{ font-size:1.8em; color:#ff8a7e; }
+.failP{  padding: 18% 0 0 0;}
+.failP p{ text-align:center; height:30px; line-height:22px; width:90%; margin:0 auto;}
+.failP .regisBtn{ font-size:1.3em;}
+
+/*现金分期*/
+.cashT{ height:70px; line-height:70px;}
+.cashTab{ margin-top:0;}
+.txt_label{ width:22%; height:50px; line-height:51px; text-align:center; display:block; position:absolute;}
+.cashTab input,.cashTab .selectM{ width:78%; padding:0 0 0 22%;}
+.cashTab .selectM{ font-family: "simsun"; position:relative;}
+.cashTab .selectM a:hover{ text-decoration:none;}
+.fontY{ color:#a9a9a9;}
+.selBg { width:10%; height:14px; background:url(../img/sprites.png) no-repeat 0 -629px; display:block; position:absolute; top:18px; right:2%;}
+.selectM .ul_select1 { width:65%; height:auto; background:#fff; z-index:1; position:absolute; top:51px; border-left:1px solid #ccc; border-right:1px solid #ccc; box-shadow: #999 0px 2px 3px; display:none;}
+.selectM .ul_select1 li{ width:100%; height:40px; line-height:40px; border-bottom:1px solid #ccc; border-top:none; text-align:center}
+.mass .massUl { overflow:hidden; padding:0 0 20% 0;}
+.mass .massUl li{ width:20%; margin:0 2.5%; float:left; text-align:center;}
+.massUl li .redBg{ width:60px; height:70px; border-radius:50%; background:#d01126; color:#fff; display:table; text-align:center; padding:0 5px; margin:0 0 5% 0;}
+.redBg .txtS { display: table-cell; vertical-align: middle;}
+.redBg .txtS>p{ width:60px;}
+.failP .blueT{ color:#157efb; text-decoration:underline;}
+.cardNum{ text-align:right; color: #999; width:75%;}
+.massUl li .masP{ width:80%; margin:0 auto;}
+
+/*申请扣款*/
+.cutT{ margin:0; height:40px; line-height:40px;}
+.cutL{ padding:0 5%; text-align:left; width:90%;}
+.cutL_L{ text-align:left;}
+.cutL_R{ text-align:right; color:#a9a9a9; width:85%;}
+.cutBtn input[type=checkbox] {
+	visibility: hidden;
+}
+.cutBtn{ width:90%; position:relative; margin:5% 5% 20%;}
+.cutBtn label{ cursor:pointer; position:absolute; width:22px; height:22px; top:0; left:0; border-radius:50%; background:#22b2fa; }
+.cutBtn label:after { opacity:0.2; content:''; position:absolute; width:8px; height:4px ; background:transparent; top:6px; left:6px; border:3px solid #fff; border-top:none; border-right:none;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.cutBtn input[type=checkbox]:checked + label:after{ opacity:1;}
+.cutBtn .checkboxLable{ width:20%; height:22px; line-height:22px; background:none; position:absolute; left:30px; color:#7e7e7e;}
+.underR,.successfulA{ color:#5c5b5b;}
+.overdue{ color:#f05c6c;}
+.cAccount{ color:#ccc;}
+
+
+/*借款信息*/
+.loanHead{ margin: 10% 0 0 0;}
+.loan_tit{ height:30px;}
+.loanCon { width:100%; padding: 5% 0;}
+.loanCon_d { width:90%; height:70px; padding:5%; background:#fff; overflow:hidden; margin:0 0 20px 0; position:relative;}
+.loanCon_dl,loanCon_dc,.loanCon_dr{ float:left;}
+.loanCon_dr{ position:absolute; top:40%; right:10%;}
+.loanCon_dl { width:66px; height:66px; border-radius:50%; border:2px solid #f35b6b; color:#d01126; text-align:center; line-height:66px; margin:0 5% 0 0;}
+.loanCon_dltit { height:30px; color:#333;}
+.loanCon_dltime { color:#8b8b8b; height:20px;}
+.loanCon_dlyi { color:#585858;}
+
+
+/*详情*/
+/*账单详情*/
+.detailHead{ width:100%; height:50px; background:#fff;}
+.detailHead h3{ width:50%; height:50px; line-height:50px; float:left; color:#505050; border-bottom:3px solid #e0e0e0;}
+.detailHead .daCurrent{ color:#d01126; border-color:#d01126;}
+.detailsO{ width:100%;}
+.detailsDai{ width:90%; height:70px; padding:5%; margin:20px 0 10px; background:#fff; border:1px solid #d7d7d7;}
+.detailsDai img,detailsDai div{ float:left;}
+.detailsDai img{ margin-right:5%;}
+.detailsDai_txt{ margin:7px 0 0 0;}
+.detailsLa ul li { width:90%; height:50px; border-bottom:1px solid #d7d7d7; border-top:1px solid #d7d7d7; background:#fff; overflow:hidden; padding:0 5%;}
+.dul_l,.dul_r{ height:50px; line-height:50px;}
+.dul_l{ float:left;}
+.dul_r{ float:right; text-align:right;}
+.detailsO_foot { padding:5% 5% 15%; color:#ed1d34;}
+.yyBtn1{ display:none;}
+.yyBtn2{ background:#b2b2b2;}
+
+/*预约详情*/
+.dty{ width:100%; display:none;}
+.dty_tit{ padding:5%;}
+.dty_tit p{ height:22px; color:#7e7e7e;}
+.dty_cen .dul_r{ color:#8b8b8b;}
+.dty_cen input { border:none; width:70%; background:#fff;}
+.dty_foot{  height: 50px; line-height: 50px; width: 90%; margin: 0 auto; text-align: right; color:#7e7e7e;}
+
+/*结清预约*/
+.setLis { margin:0 0 15%;}
+.setPass{ margin:20px 0;}
+.setPass input { text-align:right; width:84%; padding:0 8%;}
+.setP{ padding-top:50px;}
+.setCon ul .setTxt { padding-right:8%; width:87%;}
+.setCon ul >li { position:relative; }
+.setTxt .cardBtn { position:absolute; top:20px; right:3%;}
+
+/*我的账户*/
+.accUser{ width:100%; position:relative;}
+.accUser_btn{ display:block; width:20px; height:30px; background:url(../img/sprites.png) no-repeat 0 -496px; position:absolute; top:50%; right:5%; margin:-15px 0 0;}
+.accUser_con{ width:100%; height:130px; position:absolute; left:0; top:50%; width:100%; margin:-65px 0 0;}
+.accUser_con img{ display:block; margin:0 auto 10px;}
+.accUser_con p{ text-align:center; color:#fff; height:20px; line-height:20px;}
+.accLis{ margin:20px 0 20%;}
+.accLis ul li { width:85%; padding-right:10%;}
+.accLis ul .accCard{ width:89%; padding-right:6%;}
+.cardBtn{ display:inline-block; width:10px; height:10px; background:url(../img/sprites.png) no-repeat 0 -546px; margin:0 0 0 5px;}
+.accCard .dul_r{ cursor:pointer;}
+
+/*个人信息*/
+.perMessage { width:100%; overflow:hidden;}
+.perMessage .cardBtn{ margin-top:20px;}
+.perPassword { width:100%; margin:15px 0 0; overflow:hidden;}
+.perPassword li .dul_r{color:#22b2fa;}
+
+/*联系电话*/
+.telLis{ margin:20px 0 15% 0;}
+.telIcon,.telNum{ float:left;}
+.telIcon{ margin:12px 3% 0 0;}
+.telNum { height:50px; line-height:50px;}
+.telTy{ float:right; background:url(../img/sprites.png) no-repeat 0 -585px; padding:0 0 0 18px; margin:17px 0; color:#d01126;}
+.telRe{ width:90%; height:50px; line-height:50px; padding:0 5%; color:#ed1d34;}
+
+/*新增号码*/
+.newtelCon{ margin-bottom:20%;}
+.newtelIn { width:90%; padding:0 5%;} 
+
+/*家庭住址*/
+.addCon .marb10{ height:100px;}
+.addCon .telIcon{ margin-top:22px;}
+.addCon .telNum{ margin-top:26px;}
+.addCon .telNum p { height:24px; line-height:24px;}
+.telNum .coh { color:#aaa;}
+.addCon .telTy{ margin-top:42px;}
+
+/*我的银行卡*/
+.mbcCon .telIcon{ margin-top:20px;}
+
+/*新增住址*/
+.naLis { width:100%; margin:20px 0 20%;}
+#city_2{ width:100%;}
+#city_2 div { width:90%; height:50px; margin-bottom:10px; border-top:1px solid #ccc;
+			   border-bottom:1px solid #ccc; padding:0 5%; background:#fff;}
+#city_2 div p { width:10%; margin:0; float:left; height:50px; line-height:50px;}
+#city_2 div select { border:none; width:90%; height:48px; outline:none; float:left;
+					 background:#fff; font-size:0.9em; color:#333; 
+					 font-family:"Microsoft YaHei","微软雅黑","Arial Narrow";}
+.naTex{ width:90%; height:100px; border-top:1px solid #ccc; border-bottom:1px solid #ccc; 
+		border-right:none; border-left:none; padding:15px 5%; color:#333; 
+		font-family:"Microsoft YaHei","微软雅黑","Arial Narrow"; resize:none;}
+/*重置交易密码*/
+.rtpCon { margin:20px 0 20%;}
+.rtpCon p,.rtpCon input { height:50px; line-height:50px; border:none; width:100%; padding:0;}
+.rtpPo { position:relative;}
+.rtpCon .selectM{ width:100%; padding:0; margin:0; position:relative;}
+.rtpCon ul li { overflow:visible; }
+.rtpCon .mmsel .ul_select1{ width:100%;}
+.rtpCon .mmsel .ul_select1 li{ padding:0;}
+.rtpPo .hqY { display:block; width:25%; height:30px; position:absolute; top:20%; right:5%; color:#fff; background:#22b2fa; border-radius:3px; text-align:center; line-height:30px; border:none;}
+/*成功弹窗*/
+.successfulT { width:200px; height:50px; line-height:50px; background:rgba(0,0,0,0.5); position:fixed; top:30%; left:50%; margin:-25px 0 0 -100px; z-index:1; display:none;}
+.successfulT p { color:#fff; text-align:center;}

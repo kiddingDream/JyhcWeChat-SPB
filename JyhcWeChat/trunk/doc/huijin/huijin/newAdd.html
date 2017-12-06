@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>新增住址</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<link rel="stylesheet" type="text/css" href="css/list.css" />
+<script type="text/javascript">
+/*written by keefelu*/
+window.onload=function(){
+    var aslt=document.getElementsByTagName('select')[1];
+    var aotn=aslt.getElementsByTagName('option')[1];
+    aslt.onchange=function(){
+        turnCity();
+    }        
+};
+
+function turn(){
+    var cityList=new Array();
+	cityList['请选择省份']=["请选择城市"];
+    cityList['浙江']=["请选择城市","杭州","宁波","温州"];
+    cityList['北京']=["请选择城市","北京"];
+    cityList['福建']=["请选择城市","福州","厦门"];
+    var city=document.forms[0].city;//文档中的第一个省份；
+    city.options.length=0;//把city下拉列表的选项清0
+    var index=document.forms[0].prov.value; //文档中的第一个国家；
+    city.options.length=0;
+    for(var j in cityList[index]){
+        newOption=new Option(cityList[index][j],cityList[index][j]);
+        city.options.add(newOption);		
+		var dist=document.forms[0].dist;//文档中的第一个市区；
+        dist.options.length=1;//把dist下拉列表的选项清0
+    }
+}
+function turnCity(){
+        var distList=new Array();
+		distList['请选择城市']=["请选择区县"];
+		distList['..']=["....."];
+        distList['杭州']=["请选择区县","上城区","下城区","江干区"];
+        distList['宁波']=["请选择区县","江东区","江北区","北仑区"];
+        distList['温州']=["请选择区县","鹿城区","龙湾区","瓯海区"];
+        distList['北京']=["请选择区县","东城区","西城区","朝阳区"];  
+        distList['福州']=["请选择区县","鼓楼区","台江区","仓山区"];
+        distList['厦门']=["请选择区县","思明区","海沧区","湖里区"];
+        var dist=document.forms[0].dist;//文档中的第一个市区；
+        dist.options.length=0;//把dist下拉列表的选项清0
+        var index=document.forms[0].city.value;
+        dist.options.length=0;
+        for(var j in distList[index]){
+            newOption=new Option(distList[index][j],distList[index][j]);
+            dist.options.add(newOption);
+        }
+}
+</script>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+</head>
+
+<body>
+<div class="successfulT">
+	<p class="font12">新增住址成功</p>
+</div>
+<div class="naLis font12">
+    <div id="city_2">
+        <form action="#" method="get">
+            <div>
+                <p>省份</p>
+                <select class="prov" name="prov" onchange="turn()">
+                    <option value="请选择省份" selected="selected">请选择省份</option>
+                    <option value="浙江">浙江</option>
+                    <option value="北京">北京</option>
+                    <option value="福建">福建</option>
+                </select>
+            </div> 
+            <div>
+                <p>城市</p>
+                <select class="city" name="city">
+                    <option value="0" selected="selected">请选择城市</option>
+                </select>
+            </div> 
+            <div>
+                <p>区县</p>
+                <select class="dist" name="dist">
+                    <option value="0" selected="selected">请选择区县</option>
+                </select>
+            </div> 
+        </form>
+    </div>
+    <textarea class="naTex" placeholder="请输入详细地址" ></textarea>
+</div>
+<div class="teAC">
+    <a href="javascript:;" class="btn font18 sucBtn">确定</a> </div>
+<footer>
+	<p class="font13">客服电话4000-353-999</p>
+</footer>
+
+</body>
+</html>

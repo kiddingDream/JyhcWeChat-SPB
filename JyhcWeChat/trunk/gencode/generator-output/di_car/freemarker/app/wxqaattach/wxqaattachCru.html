@@ -1,0 +1,101 @@
+<#escape x as x?html>
+
+<SCRIPT type="text/javascript">
+<!--
+
+jQuery(document).ready(function(){
+	//回选 下拉框
+	//jQuery("#search_state option[value='是']").prop("selected",true);
+	
+	/*
+	$('.date-picker').datepicker({
+		    autoclose: true,
+		    format: 'yyyy-mm-dd',
+		    language: 'zh-CN'
+		    //,todayBtn: 'linked',
+		    //startDate:new Date(2014,10,27),
+			//endDate:'+60d',
+		    //startDate: '+1d',
+		}).next().on(ace.click_event, function(){
+			$(this).prev().focus();
+		});
+	*/
+	
+	
+	
+	});
+	
+	
+//-->
+</SCRIPT>
+
+
+
+<div class="row">
+	<div class="col-xs-12">
+		<form class="form-horizontal" id="validation-form" method="POST" novalidate="novalidate" action="${ctx}/wxqaattach/update" > 
+			<input type="hidden" id="id" name="id" value="${(returnDatas.data.id)!''}"/>	
+<!--input  hidden  End-->
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="contract_num" >客户身份证号</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="contract_num" class="col-xs-12 col-sm-6" id="contract_num" value="${(returnDatas.data.contract_num)!''}"  type="text" />
+					</div><div class="help-block" for="contract_num"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="attach_style" >附件类型</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="attach_style" class="col-xs-12 col-sm-6" id="attach_style" value="${(returnDatas.data.attach_style)!''}"  type="text" />
+					</div><div class="help-block" for="attach_style"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="file_name" >文件名称</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="file_name" class="col-xs-12 col-sm-6" id="file_name" value="${(returnDatas.data.file_name)!''}"  type="text" />
+					</div><div class="help-block" for="file_name"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="file_path" >文件路径</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="file_path" class="col-xs-12 col-sm-6" id="file_path" value="${(returnDatas.data.file_path)!''}"  type="text" />
+					</div><div class="help-block" for="file_path"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+					<!--日期型-->
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="create_time" >上传时间</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+					 <div class="input-group col-xs-12 col-sm-6">
+						<input name="create_time"  class="form-control date-picker"  id="create_time" readonly="readonly" value="${(returnDatas.data.create_time)!''}"  type="text" />
+					        <span class="input-group-addon">
+								<i class="fa fa-calendar bigger-110"></i>
+							</span>
+					   </div>
+					
+					</div><div class="help-block" for="create_time"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+		</form>
+		<div class="wizard-actions">
+			<button class="btn btn-success btn-info" data-last="Finish" onclick="commonUpdateForm('validation-form','${ctx}/wxqaattach/list');">
+				保存
+			</button>
+		</div>
+	</div>
+</div>
+
+
+</#escape>

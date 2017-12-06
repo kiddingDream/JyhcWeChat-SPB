@@ -1,0 +1,103 @@
+<#escape x as x?html>
+
+<SCRIPT type="text/javascript">
+<!--
+
+jQuery(document).ready(function(){
+	//回选 下拉框
+	//jQuery("#search_state option[value='是']").prop("selected",true);
+	
+	/*
+	$('.date-picker').datepicker({
+		    autoclose: true,
+		    format: 'yyyy-mm-dd',
+		    language: 'zh-CN'
+		    //,todayBtn: 'linked',
+		    //startDate:new Date(2014,10,27),
+			//endDate:'+60d',
+		    //startDate: '+1d',
+		}).next().on(ace.click_event, function(){
+			$(this).prev().focus();
+		});
+	*/
+	
+	
+	
+	});
+	
+	
+//-->
+</SCRIPT>
+
+
+
+<div class="row">
+	<div class="col-xs-12">
+		<form class="form-horizontal" id="validation-form" method="POST" novalidate="novalidate" action="${ctx}/statsitevv/update" > 
+			<input type="hidden" id="id" name="id" value="${(returnDatas.data.id)!''}"/>	
+<!--input  hidden  End-->
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="stat_date" >stat_date</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="stat_date" class="col-xs-12 col-sm-6" id="stat_date" value="${(returnDatas.data.stat_date)!''}"  type="text" />
+					</div><div class="help-block" for="stat_date"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="user_num" >user_num</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="user_num" class="col-xs-12 col-sm-6" id="user_num" value="${(returnDatas.data.user_num)!''}"  type="text" />
+					</div><div class="help-block" for="user_num"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="pv_num" >pv_num</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="pv_num" class="col-xs-12 col-sm-6" id="pv_num" value="${(returnDatas.data.pv_num)!''}"  type="text" />
+					</div><div class="help-block" for="pv_num"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="vv_num" >vv_num</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="vv_num" class="col-xs-12 col-sm-6" id="vv_num" value="${(returnDatas.data.vv_num)!''}"  type="text" />
+					</div><div class="help-block" for="vv_num"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="register_num" >register_num</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="register_num" class="col-xs-12 col-sm-6" id="register_num" value="${(returnDatas.data.register_num)!''}"  type="text" />
+					</div><div class="help-block" for="register_num"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="order_num" >order_num</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="order_num" class="col-xs-12 col-sm-6" id="order_num" value="${(returnDatas.data.order_num)!''}"  type="text" />
+					</div><div class="help-block" for="order_num"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+		</form>
+		<div class="wizard-actions">
+			<button class="btn btn-success btn-info" data-last="Finish" onclick="commonUpdateForm('validation-form','${ctx}/statsitevv/list');">
+				保存
+			</button>
+		</div>
+	</div>
+</div>
+
+
+</#escape>

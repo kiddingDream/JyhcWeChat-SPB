@@ -1,0 +1,44 @@
+/*产品介绍*/
+.proCon{ width:100%; background:#ebebeb; position:relative;}
+.proCon_Tit { overflow:hidden; width:90%; height:145px;margin:0 auto; position:relative;}
+.proCon_Tit div{ margin:40px 0 0; overflow:hidden;}
+.proCon_Tit h2,.proCon_Tit img{ float:left;}
+.proCon_Tit h2,.proCon_Tit h4 { color:#d01126; height:30px;}
+.proCon_Tit h4 { height:30px; line-height:30px; font-size: 1.4em; padding: 0 14%;}
+.proCon_Tit h2{ font-size: 2.2em; padding: 0 5% 0; height: 30px; line-height: 30px;}
+.proCon_Tit .proCon_img { position:absolute; top:0px;
+  right: 5%; }
+.proCon_txt { width:85%; padding:0 5% 0 10%;}
+.proCon_txt p { background:url(../img/cpjs2_r6_c5.png) no-repeat left 3px; padding:0 0 0 17px; font-family:"SimHei" , "黑体"; font-size:1.2em; line-height:22px;}
+.proCon>img{ position:absolute;}
+.proBg1{ top:10px; right:5%;}
+.proBg2{ top:40%; left:7%;}
+.proBg3{ bottom:28%; right:25%;}
+
+/*活动介绍*/
+.proCon_Tit .activ_img1{ top:-8px;}
+.activ_tit2 { width:auto; padding:10% 0 0 37%; margin:0;}
+.activ_tit2 h2,.activ_tit2 h4 { color:#ff9001;}
+.proCon_Tit .activ_img2 { top: 35%; left:5%;}
+.activ_tit2 h4{ padding: 0 17%;}
+.activBg2 { top:32%; left:15%;}
+.activ_txt2 {width: 69%; padding-left: 25%; }
+.proCon_Tit .activ_img1,.proCon_Tit .activ_img3{ right:0;}
+.activ_tit3 h2,.activ_tit3 h4{ color:#00ae73;}
+.activ_tit3 { padding-top:10%;}
+.activBg3 { bottom:32%;}
+.proCon_Tit .activ_img3{ top:20%;}
+
+
+/*关于惠今*/ 
+.aboutBan{ width:100%; padding:0 0 10%;}
+.aboutBan img{ width:100%;}
+.aboutBan p{ width:90%; line-height:27px;color: #878787; margin:7% auto; font-family:"SimHei" , "黑体";}
+
+
+/*常见问题*/
+.proCon{ width:100%; }
+.proCon_ul{ width:90%; padding:5%;}
+.proCon_tit{ font-weight:bold; background:url(../img/sprites.png) 0 -924px no-repeat;  padding: 0 0 0 9%; height:35px; color:#272636;}
+.proConli {font-family:"SimHei" , "黑体";   padding: 0 0 10px 5%; width: 92%; color:#7e7e7e;}
+.proConli_con { padding:0 0 0 4%; background:url(../img/cjwt_r4_c4.png) no-repeat left 4px; line-height:22px; margin:0 0 0 4%;}

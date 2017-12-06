@@ -1,0 +1,189 @@
+<#escape x as x?html>
+
+<SCRIPT type="text/javascript">
+<!--
+
+jQuery(document).ready(function(){
+	//回选 下拉框
+	//jQuery("#search_state option[value='是']").prop("selected",true);
+	
+	/*
+	$('.date-picker').datepicker({
+		    autoclose: true,
+		    format: 'yyyy-mm-dd',
+		    language: 'zh-CN'
+		    //,todayBtn: 'linked',
+		    //startDate:new Date(2014,10,27),
+			//endDate:'+60d',
+		    //startDate: '+1d',
+		}).next().on(ace.click_event, function(){
+			$(this).prev().focus();
+		});
+	*/
+	
+	
+	
+	});
+	
+	
+//-->
+</SCRIPT>
+
+
+
+<div class="row">
+	<div class="col-xs-12">
+		<form class="form-horizontal" id="validation-form" method="POST" novalidate="novalidate" action="${ctx}/wxqapaylog/update" > 
+			<input type="hidden" id="id" name="id" value="${(returnDatas.data.id)!''}"/>	
+<!--input  hidden  End-->
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="contract_id" >合同号</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="contract_id" class="col-xs-12 col-sm-6" id="contract_id" value="${(returnDatas.data.contract_id)!''}"  type="text" />
+					</div><div class="help-block" for="contract_id"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="order_no" >订单号</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="order_no" class="col-xs-12 col-sm-6" id="order_no" value="${(returnDatas.data.order_no)!''}"  type="text" />
+					</div><div class="help-block" for="order_no"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="merch_OrderNo" >商户订单号</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="merch_OrderNo" class="col-xs-12 col-sm-6" id="merch_OrderNo" value="${(returnDatas.data.merch_OrderNo)!''}"  type="text" />
+					</div><div class="help-block" for="merch_OrderNo"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="tradeNo" >交易流水号</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="tradeNo" class="col-xs-12 col-sm-6" id="tradeNo" value="${(returnDatas.data.tradeNo)!''}"  type="text" />
+					</div><div class="help-block" for="tradeNo"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="sign_type" >签名方式</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="sign_type" class="col-xs-12 col-sm-6" id="sign_type" value="${(returnDatas.data.sign_type)!''}"  type="text" />
+					</div><div class="help-block" for="sign_type"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="sign" >签名</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="sign" class="col-xs-12 col-sm-6" id="sign" value="${(returnDatas.data.sign)!''}"  type="text" />
+					</div><div class="help-block" for="sign"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="partner_id" >商户id</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="partner_id" class="col-xs-12 col-sm-6" id="partner_id" value="${(returnDatas.data.partner_id)!''}"  type="text" />
+					</div><div class="help-block" for="partner_id"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="trade_amount" >交易金额</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="trade_amount" class="col-xs-12 col-sm-6" id="trade_amount" value="${(returnDatas.data.trade_amount)!''}"  type="text" />
+					</div><div class="help-block" for="trade_amount"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="return_url" >回调url</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="return_url" class="col-xs-12 col-sm-6" id="return_url" value="${(returnDatas.data.return_url)!''}"  type="text" />
+					</div><div class="help-block" for="return_url"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="open_id" >open_id</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="open_id" class="col-xs-12 col-sm-6" id="open_id" value="${(returnDatas.data.open_id)!''}"  type="text" />
+					</div><div class="help-block" for="open_id"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="pay_result" >支付结果(最终结果以异步通知结果为准)</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="pay_result" class="col-xs-12 col-sm-6" id="pay_result" value="${(returnDatas.data.pay_result)!''}"  type="text" />
+					</div><div class="help-block" for="pay_result"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+					<!--日期型-->
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="create_time" >创建时间</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+					 <div class="input-group col-xs-12 col-sm-6">
+						<input name="create_time"  class="form-control date-picker"  id="create_time" readonly="readonly" value="${(returnDatas.data.create_time)!''}"  type="text" />
+					        <span class="input-group-addon">
+								<i class="fa fa-calendar bigger-110"></i>
+							</span>
+					   </div>
+					
+					</div><div class="help-block" for="create_time"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="notify_result" >异步通知时间</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="notify_result" class="col-xs-12 col-sm-6" id="notify_result" value="${(returnDatas.data.notify_result)!''}"  type="text" />
+					</div><div class="help-block" for="notify_result"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+					<!--日期型-->
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="modify_time" >异步通知结果时间</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+					 <div class="input-group col-xs-12 col-sm-6">
+						<input name="modify_time"  class="form-control date-picker"  id="modify_time" readonly="readonly" value="${(returnDatas.data.modify_time)!''}"  type="text" />
+					        <span class="input-group-addon">
+								<i class="fa fa-calendar bigger-110"></i>
+							</span>
+					   </div>
+					
+					</div><div class="help-block" for="modify_time"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+		</form>
+		<div class="wizard-actions">
+			<button class="btn btn-success btn-info" data-last="Finish" onclick="commonUpdateForm('validation-form','${ctx}/wxqapaylog/list');">
+				保存
+			</button>
+		</div>
+	</div>
+</div>
+
+
+</#escape>

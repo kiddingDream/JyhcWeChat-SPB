@@ -1,0 +1,164 @@
+<#escape x as x?html>
+
+<SCRIPT type="text/javascript">
+<!--
+
+jQuery(document).ready(function(){
+	//回选 下拉框
+	//jQuery("#search_state option[value='是']").prop("selected",true);
+	
+	/*
+	$('.date-picker').datepicker({
+		    autoclose: true,
+		    format: 'yyyy-mm-dd',
+		    language: 'zh-CN'
+		    //,todayBtn: 'linked',
+		    //startDate:new Date(2014,10,27),
+			//endDate:'+60d',
+		    //startDate: '+1d',
+		}).next().on(ace.click_event, function(){
+			$(this).prev().focus();
+		});
+	*/
+	
+	
+	
+	});
+	
+	
+//-->
+</SCRIPT>
+
+
+
+<div class="row">
+	<div class="col-xs-12">
+		<form class="form-horizontal" id="validation-form" method="POST" novalidate="novalidate" action="${ctx}/wxqasale/update" > 
+			<input type="hidden" id="id" name="id" value="${(returnDatas.data.id)!''}"/>	
+<!--input  hidden  End-->
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="login_name" >login_name</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="login_name" class="col-xs-12 col-sm-6" id="login_name" value="${(returnDatas.data.login_name)!''}"  type="text" />
+					</div><div class="help-block" for="login_name"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="sale_openid" >销售人openid</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="sale_openid" class="col-xs-12 col-sm-6" id="sale_openid" value="${(returnDatas.data.sale_openid)!''}"  type="text" />
+					</div><div class="help-block" for="sale_openid"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="contract_num" >生成的合同编号</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="contract_num" class="col-xs-12 col-sm-6" id="contract_num" value="${(returnDatas.data.contract_num)!''}"  type="text" />
+					</div><div class="help-block" for="contract_num"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="model" >手机型号</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="model" class="col-xs-12 col-sm-6" id="model" value="${(returnDatas.data.model)!''}"  type="text" />
+					</div><div class="help-block" for="model"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="price" >屏保价格</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="price" class="col-xs-12 col-sm-6" id="price" value="${(returnDatas.data.price)!''}"  type="text" />
+					</div><div class="help-block" for="price"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+					<!--日期型-->
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="sale_time" >销售时间</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+					 <div class="input-group col-xs-12 col-sm-6">
+						<input name="sale_time"  class="form-control date-picker"  id="sale_time" readonly="readonly" value="${(returnDatas.data.sale_time)!''}"  type="text" />
+					        <span class="input-group-addon">
+								<i class="fa fa-calendar bigger-110"></i>
+							</span>
+					   </div>
+					
+					</div><div class="help-block" for="sale_time"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="sale_invite_code" >此单邀请码</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="sale_invite_code" class="col-xs-12 col-sm-6" id="sale_invite_code" value="${(returnDatas.data.sale_invite_code)!''}"  type="text" />
+					</div><div class="help-block" for="sale_invite_code"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="iD_num" >客户身份证号</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="iD_num" class="col-xs-12 col-sm-6" id="iD_num" value="${(returnDatas.data.iD_num)!''}"  type="text" />
+					</div><div class="help-block" for="iD_num"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="iMEI" >手机串号</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="iMEI" class="col-xs-12 col-sm-6" id="iMEI" value="${(returnDatas.data.iMEI)!''}"  type="text" />
+					</div><div class="help-block" for="iMEI"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="invite_code_fx" >该单邀请码返现</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="invite_code_fx" class="col-xs-12 col-sm-6" id="invite_code_fx" value="${(returnDatas.data.invite_code_fx)!''}"  type="text" />
+					</div><div class="help-block" for="invite_code_fx"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="parent_code_fx" >改单上级码返现</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="parent_code_fx" class="col-xs-12 col-sm-6" id="parent_code_fx" value="${(returnDatas.data.parent_code_fx)!''}"  type="text" />
+					</div><div class="help-block" for="parent_code_fx"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="ancestor_code_fx" >该单一级码返现</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="ancestor_code_fx" class="col-xs-12 col-sm-6" id="ancestor_code_fx" value="${(returnDatas.data.ancestor_code_fx)!''}"  type="text" />
+					</div><div class="help-block" for="ancestor_code_fx"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+		</form>
+		<div class="wizard-actions">
+			<button class="btn btn-success btn-info" data-last="Finish" onclick="commonUpdateForm('validation-form','${ctx}/wxqasale/list');">
+				保存
+			</button>
+		</div>
+	</div>
+</div>
+
+
+</#escape>

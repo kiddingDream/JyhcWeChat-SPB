@@ -1,0 +1,175 @@
+<#escape x as x?html>
+
+<SCRIPT type="text/javascript">
+<!--
+
+jQuery(document).ready(function(){
+	//回选 下拉框
+	//jQuery("#search_state option[value='是']").prop("selected",true);
+	
+	/*
+	$('.date-picker').datepicker({
+		    autoclose: true,
+		    format: 'yyyy-mm-dd',
+		    language: 'zh-CN'
+		    //,todayBtn: 'linked',
+		    //startDate:new Date(2014,10,27),
+			//endDate:'+60d',
+		    //startDate: '+1d',
+		}).next().on(ace.click_event, function(){
+			$(this).prev().focus();
+		});
+	*/
+	
+	
+	
+	});
+	
+	
+//-->
+</SCRIPT>
+
+
+
+<div class="row">
+	<div class="col-xs-12">
+		<form class="form-horizontal" id="validation-form" method="POST" novalidate="novalidate" action="${ctx}/wxqainvite/update" > 
+			<input type="hidden" id="id" name="id" value="${(returnDatas.data.id)!''}"/>	
+<!--input  hidden  End-->
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="openid" >openid,用于关联user表</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="openid" class="col-xs-12 col-sm-6" id="openid" value="${(returnDatas.data.openid)!''}"  type="text" />
+					</div><div class="help-block" for="openid"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="login_name" >登录名</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="login_name" class="col-xs-12 col-sm-6" id="login_name" value="${(returnDatas.data.login_name)!''}"  type="text" />
+					</div><div class="help-block" for="login_name"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="ancestor_code" >一级邀请码</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="ancestor_code" class="col-xs-12 col-sm-6" id="ancestor_code" value="${(returnDatas.data.ancestor_code)!''}"  type="text" />
+					</div><div class="help-block" for="ancestor_code"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="parent_code" >上级邀请码</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="parent_code" class="col-xs-12 col-sm-6" id="parent_code" value="${(returnDatas.data.parent_code)!''}"  type="text" />
+					</div><div class="help-block" for="parent_code"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="invite_code" >邀请码</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="invite_code" class="col-xs-12 col-sm-6" id="invite_code" value="${(returnDatas.data.invite_code)!''}"  type="text" />
+					</div><div class="help-block" for="invite_code"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="company_login_name" >惠今员工工号</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="company_login_name" class="col-xs-12 col-sm-6" id="company_login_name" value="${(returnDatas.data.company_login_name)!''}"  type="text" />
+					</div><div class="help-block" for="company_login_name"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="role" >B商户，S店员，C客户</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="role" class="col-xs-12 col-sm-6" id="role" value="${(returnDatas.data.role)!''}"  type="text" />
+					</div><div class="help-block" for="role"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="province" >所在省市</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="province" class="col-xs-12 col-sm-6" id="province" value="${(returnDatas.data.province)!''}"  type="text" />
+					</div><div class="help-block" for="province"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for=" business_licence" >营业执照</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name=" business_licence" class="col-xs-12 col-sm-6" id=" business_licence" value="${(returnDatas.data. business_licence)!''}"  type="text" />
+					</div><div class="help-block" for=" business_licence"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="bank" >开户行</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="bank" class="col-xs-12 col-sm-6" id="bank" value="${(returnDatas.data.bank)!''}"  type="text" />
+					</div><div class="help-block" for="bank"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="bank_user_name" >银行账户名</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="bank_user_name" class="col-xs-12 col-sm-6" id="bank_user_name" value="${(returnDatas.data.bank_user_name)!''}"  type="text" />
+					</div><div class="help-block" for="bank_user_name"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="bank_account" >结算账户号</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="bank_account" class="col-xs-12 col-sm-6" id="bank_account" value="${(returnDatas.data.bank_account)!''}"  type="text" />
+					</div><div class="help-block" for="bank_account"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="contact_name" >联系人</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="contact_name" class="col-xs-12 col-sm-6" id="contact_name" value="${(returnDatas.data.contact_name)!''}"  type="text" />
+					</div><div class="help-block" for="contact_name"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="mobile" >手机号</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="mobile" class="col-xs-12 col-sm-6" id="mobile" value="${(returnDatas.data.mobile)!''}"  type="text" />
+					</div><div class="help-block" for="mobile"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+		</form>
+		<div class="wizard-actions">
+			<button class="btn btn-success btn-info" data-last="Finish" onclick="commonUpdateForm('validation-form','${ctx}/wxqainvite/list');">
+				保存
+			</button>
+		</div>
+	</div>
+</div>
+
+
+</#escape>

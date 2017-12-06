@@ -1,0 +1,44 @@
+select  case
+     when  al.operation='wologin' then '用户登录'
+     when  al.operation='member' then '沃的信息'
+     when  al.operation='address' then '收货地址'
+     when  al.operation='auth' then '实名认证'
+     when  al.operation='cart' then '加购物车'
+     when  al.operation='cat' then '商品分类'
+     when  al.operation='detail' then '商品详情'
+     when  al.operation='feedback' then '意见反馈'
+     when  al.operation='index' then '商城首页'
+     when  al.operation='limitbuy' then '限时抢购'
+     when  al.operation='merchant_index' then '商户首页'
+     when  al.operation='nowbuy' then '立即购买'
+     when  al.operation='order' then '下单操作'
+     when  al.operation='search' then '商品搜索'
+     when  al.operation='gift' then '赠品查询'
+     when  al.operation='favorite' then '商品收藏'
+
+else al.operation end
+         ,
+count(al.c) From  es_api_logs as al
+group by al.operation
+
+
+
+select date_format(from_unixtime(left(lg.create_time,10)),'%Y-%m-%d') as create_time,(SELECT count(lg1.operation) from es_api_logs  as lg1
+ where  date_format(from_unixtime(left(lg1.create_time,10)),'%Y-%m-%d')=date_format(from_unixtime(left(lg.create_time,10)),'%Y-%m-%d')) as num1, case
+     when  lg.operation='wologin' then '用户登录'
+     when  lg.operation='member' then '沃的信息'
+     when  lg.operation='address' then '收货地址'
+     when  lg.operation='auth' then '实名认证'
+     when  lg.operation='cart' then '加购物车'
+     when  lg.operation='cat' then '商品分类'
+     when  lg.operation='detail' then '商品详情'
+     when  lg.operation='feedback' then '意见反馈'
+     when  lg.operation='index' then '商城首页'
+     when  lg.operation='limitbuy' then '限时抢购'
+     when  lg.operation='merchant_index' then '商户首页'
+     when  lg.operation='nowbuy' then '立即购买'
+     when  lg.operation='order' then '下单操作'
+     when  lg.operation='search' then '商品搜索'
+     when  lg.operation='gift' then '赠品查询'
+     when  lg.operation='favorite' then '商品收藏'
+else lg.operation end as operation,count(*) as num  from es_api_logs as lg   GROUP BY  lg.operation,date_format(from_unixtime(left(lg.create_time,10)),'%Y-%m-%d')  order by lg.create_time desc,num desc

@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>注册</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/list.css"/>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+</head>
+
+<body>
+<div class="banner">
+    <img src="img/banner1.jpg" width="100%"/>
+</div>
+<div class="tabT">
+    <div class="lisT">
+        <label for="loginName" class="lisT_label"><img src="img/phone.png" height="25px"/></label>
+        <input id="loginName" type="text" class="itxt font11" name="loginname" tabindex="1" placeholder="请输入手机号"/>
+    </div>
+    <div class="lisT mar1">
+        <label class="lisT_label" for="nregisY"><img class="yzmI" src="img/yzm.png" height="20px"/></label>
+        <input id="btnSendCode" class="hqY font11" type="button" value="获取验证码" onclick="sendMessage()"/>
+        <input type="text" id="nregisY" name="nregisY" class="itxt font11" tabindex="2" placeholder="请输入验证码"/>
+
+    </div>
+</div>
+<div class="teAC">
+    <a href="javascript:;" class="btn font18">下一步</a>
+    <div class="teR"><a class="floatR font12" href="javascript:;">已有账号，去登陆>></a></div>
+</div>
+<footer>
+    <p class="font13">客服电话4000-353-999</p>
+</footer>
+<script type="text/javascript">
+    var InterValObj; //timer变量，控制时间
+    var count = 6; //间隔函数，1秒执行
+    var curCount;//当前剩余秒数
+    var code = ""; //验证码
+    var codeLength = 6;//验证码长度
+    function sendMessage() {
+        curCount = count;
+        var dealType; //验证方式
+        var uid = $("#uid").val();//用户uid
+        $('.hqY').css('background', '#dadcdd');
+        if ($("#phone").attr("checked") == true) {
+            dealType = "phone";
+        }
+        else {
+            dealType = "email";
+        }
+        //产生验证码
+        for (var i = 0; i < codeLength; i++) {
+            code += parseInt(Math.random() * 9).toString();
+        }
+        //设置button效果，开始计时
+        $("#btnSendCode").attr("disabled", "true");
+        $("#btnSendCode").val(curCount + "秒后可重发");
+        InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+        //向后台发送处理数据
+        $.ajax({
+            type: "POST", //用POST方式传输
+            dataType: "text", //数据格式:JSON
+            url: 'Login.ashx', //目标地址
+            data: "dealType=" + dealType + "&uid=" + uid + "&code=" + code,
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+            },
+            success: function (msg) {
+            }
+        });
+    }
+    //timer处理函数
+    function SetRemainTime() {
+        if (curCount == 0) {
+            $('.hqY').css('background', '#22b2fa');
+            window.clearInterval(InterValObj);//停止计时器
+            $("#btnSendCode").removeAttr("disabled");//启用按钮
+            $("#btnSendCode").val("获取验证码");
+            code = ""; //清除验证码。如果不清除，过时间后，输入收到的验证码依然有效
+        }
+        else {
+            curCount--;
+            $("#btnSendCode").val(curCount + "秒后可重发");
+        }
+    }
+</script>
+
+</body>
+</html>

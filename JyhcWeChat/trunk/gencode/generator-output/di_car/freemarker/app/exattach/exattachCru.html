@@ -1,0 +1,110 @@
+<#escape x as x?html>
+
+<SCRIPT type="text/javascript">
+<!--
+
+jQuery(document).ready(function(){
+	//回选 下拉框
+	//jQuery("#search_state option[value='是']").prop("selected",true);
+	
+	/*
+	$('.date-picker').datepicker({
+		    autoclose: true,
+		    format: 'yyyy-mm-dd',
+		    language: 'zh-CN'
+		    //,todayBtn: 'linked',
+		    //startDate:new Date(2014,10,27),
+			//endDate:'+60d',
+		    //startDate: '+1d',
+		}).next().on(ace.click_event, function(){
+			$(this).prev().focus();
+		});
+	*/
+	
+	
+	
+	});
+	
+	
+//-->
+</SCRIPT>
+
+
+
+<div class="row">
+	<div class="col-xs-12">
+		<form class="form-horizontal" id="validation-form" method="POST" novalidate="novalidate" action="${ctx}/exattach/update" > 
+			<input type="hidden" id="attach_id" name="attach_id" value="${(returnDatas.data.attach_id)!''}"/>	
+<!--input  hidden  End-->
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="contract_id" >合同id</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="contract_id" class="col-xs-12 col-sm-6" id="contract_id" value="${(returnDatas.data.contract_id)!''}"  type="text" />
+					</div><div class="help-block" for="contract_id"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="attach_name" >附件名</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="attach_name" class="col-xs-12 col-sm-6" id="attach_name" value="${(returnDatas.data.attach_name)!''}"  type="text" />
+					</div><div class="help-block" for="attach_name"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="attach_path" >附件路径</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="attach_path" class="col-xs-12 col-sm-6" id="attach_path" value="${(returnDatas.data.attach_path)!''}"  type="text" />
+					</div><div class="help-block" for="attach_path"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="attach_txtNme" >附件扩展名</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="attach_txtNme" class="col-xs-12 col-sm-6" id="attach_txtNme" value="${(returnDatas.data.attach_txtNme)!''}"  type="text" />
+					</div><div class="help-block" for="attach_txtNme"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="attach_filename" >附件文件名</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="attach_filename" class="col-xs-12 col-sm-6" id="attach_filename" value="${(returnDatas.data.attach_filename)!''}"  type="text" />
+					</div><div class="help-block" for="attach_filename"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+					<!--日期型-->
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="att_create_time" >att_create_time</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+					 <div class="input-group col-xs-12 col-sm-6">
+						<input name="att_create_time"  class="form-control date-picker"  id="att_create_time" readonly="readonly" value="${(returnDatas.data.att_create_time)!''}"  type="text" />
+					        <span class="input-group-addon">
+								<i class="fa fa-calendar bigger-110"></i>
+							</span>
+					   </div>
+					
+					</div><div class="help-block" for="att_create_time"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+		</form>
+		<div class="wizard-actions">
+			<button class="btn btn-success btn-info" data-last="Finish" onclick="commonUpdateForm('validation-form','${ctx}/exattach/list');">
+				保存
+			</button>
+		</div>
+	</div>
+</div>
+
+
+</#escape>

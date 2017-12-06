@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>新增住址</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<link rel="stylesheet" type="text/css" href="css/list.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.cityselect.js"></script>
+<script type="text/javascript">
+$(function(){
+
+	$("#city_2").citySelect({
+		prov:"北京"
+	});
+	
+	
+});
+</script>
+</head>
+
+<body>
+<div class="naLis font12">
+    <div id="city_2">
+        <div>
+            <p>省份</p>
+            <select class="prov"></select>
+        </div> 
+                    <div>
+            <p>城市</p>
+            <select class="city" disabled="disabled"></select>
+        </div> 
+        <div>
+            <p>区县</p>
+            <select class="dist" disabled="disabled"></select>
+        </div> 
+    </div>
+    <textarea class="naTex" placeholder="请输入详细地址" ></textarea>
+</div>
+<div class="teAC">
+    <a href="javascript:;" class="btn font18">确定</a> </div>
+<footer>
+	<p class="font13">客服电话4000-353-999</p>
+</footer>
+
+</body>
+</html>

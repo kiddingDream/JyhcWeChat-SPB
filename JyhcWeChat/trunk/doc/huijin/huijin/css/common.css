@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* css reset */
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0;padding:0;border:0; font-weight:normal;} 
+body{background:#ebebeb;color:#333;font-family:"Microsoft YaHei","微软雅黑","Arial Narrow"; font-size:12px;} 
+ul,ol{list-style-type:none;} 
+select,input,img,select{vertical-align:middle; outline:none;} 
+a{text-decoration:none; color:#7e7e7e;}  
+a:hover,a:active,a:focus{color:#c00;text-decoration:underline;} 
+
+/*common*/
+.floatR{ float:right;}
+
+.font09{ font-size:0.9em;}
+.font11{ font-size:1.1em;}
+.font12{font-size:1.2em;}
+.font13{font-size:1.3em;}
+.font14{font-size:1.4em;}
+.font15{ font-size: 1.5em; color: #878787;}
+.font16{ font-size:1.4em;}
+.font18 { color:#fff; font-size: 1.8em;}
+
+.btn { width:90%; height:50px; margin:0 auto 5%; background:#d01126; border-radius:5px; display:block;  line-height: 50px; text-align: center; font-family:"SimHei" , "黑体";}
+.btn:hover{ color:#fff; text-decoration:none;}
+
+.teAC{ text-align:center; color:#7e7e7e;}
+
+.blueG{ color:#17cec8;}
+.impB{ font-size:2em;}
+
+.pdl10 { padding-left:10%;}
+.marb10{ margin-bottom:10px;}
+
+footer { margin:15% 0 0 0; width:100%; text-align:center; color: #878787;}
+

@@ -1,0 +1,85 @@
+<#escape x as x?html>
+
+<SCRIPT type="text/javascript">
+<!--
+
+jQuery(document).ready(function(){
+	//回选 下拉框
+	//jQuery("#search_state option[value='是']").prop("selected",true);
+	
+	/*
+	$('.date-picker').datepicker({
+		    autoclose: true,
+		    format: 'yyyy-mm-dd',
+		    language: 'zh-CN'
+		    //,todayBtn: 'linked',
+		    //startDate:new Date(2014,10,27),
+			//endDate:'+60d',
+		    //startDate: '+1d',
+		}).next().on(ace.click_event, function(){
+			$(this).prev().focus();
+		});
+	*/
+	
+	
+	
+	});
+	
+	
+//-->
+</SCRIPT>
+
+
+
+<div class="row">
+	<div class="col-xs-12">
+		<form class="form-horizontal" id="validation-form" method="POST" novalidate="novalidate" action="${ctx}/wxqascreen/update" > 
+			<input type="hidden" id="id" name="id" value="${(returnDatas.data.id)!''}"/>	
+<!--input  hidden  End-->
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="brand" >品牌</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="brand" class="col-xs-12 col-sm-6" id="brand" value="${(returnDatas.data.brand)!''}"  type="text" />
+					</div><div class="help-block" for="brand"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="model" >型号</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="model" class="col-xs-12 col-sm-6" id="model" value="${(returnDatas.data.model)!''}"  type="text" />
+					</div><div class="help-block" for="model"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="price" >价格</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="price" class="col-xs-12 col-sm-6" id="price" value="${(returnDatas.data.price)!''}"  type="text" />
+					</div><div class="help-block" for="price"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="disabled" >是否可用(0,可用 1,不可用)</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="clearfix">
+						<input name="disabled" class="col-xs-12 col-sm-6" id="disabled" value="${(returnDatas.data.disabled)!''}"  type="text" />
+					</div><div class="help-block" for="disabled"></div>
+				</div>
+			</div>
+	        <div class="space-2"></div>
+		</form>
+		<div class="wizard-actions">
+			<button class="btn btn-success btn-info" data-last="Finish" onclick="commonUpdateForm('validation-form','${ctx}/wxqascreen/list');">
+				保存
+			</button>
+		</div>
+	</div>
+</div>
+
+
+</#escape>
